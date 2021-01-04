@@ -7,7 +7,6 @@ end
 
 discordClient = discord.client()
 discordClient.enableAutoReconnect()
-
 discordClient.login(token)
 
 discordClient.on("message","ping-pong-textOnly",function(message)
@@ -28,7 +27,6 @@ end
 
 discordClient = discord.client()
 discordClient.enableAutoReconnect()
-
 discordClient.login(token)
 
 discordClient.on("message","ping-pong-text+embed",function(message)

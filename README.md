@@ -1,3 +1,9 @@
+Notes
+---
+Turn on all the "Privileged Gateway Intent" or something may not work as intended
+![](https://raw.githubusercontent.com/devonium/gm-discordAPI/doc/privileged_gateway_intents.png)
+
+
 # Some easy examples
 * [examples](https://github.com/devonium/gm-discordAPI/blob/doc/examples.md)
 

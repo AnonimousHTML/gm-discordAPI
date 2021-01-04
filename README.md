@@ -1,24 +1,24 @@
 discord
 ---
 
-* [discord](https://github.com/devonium/discordapi-docs/blob/gh-pages/discord.md)
+* [discord](https://github.com/devonium/gm-discordAPI/blob/doc/discord.md)
 
 client
 ---
-* [client](https://github.com/devonium/discordapi-docs/blob/gh-pages/client.md)
+* [client](https://github.com/devonium/gm-discordAPI/blob/doc/client.md)
 
 structures
 ---
 
-* [user](https://github.com/devonium/discordapi-docs/blob/gh-pages/user.md)
-* [guild](https://github.com/devonium/discordapi-docs/blob/gh-pages/guild.md)
-* [channel](https://github.com/devonium/discordapi-docs/blob/gh-pages/channel.md)
-* [member](https://github.com/devonium/discordapi-docs/blob/gh-pages/member.md)
-* [message](https://github.com/devonium/discordapi-docs/blob/gh-pages/message.md)
-* [interaction](https://github.com/devonium/discordapi-docs/blob/gh-pages/userinteraction.md)
+* [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md)
+* [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md)
+* [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md)
+* [member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md)
+* [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md)
+* [interaction](https://github.com/devonium/gm-discordAPI/blob/doc/userinteraction.md)
 
 constructors
 ---
-* [message](https://github.com/devonium/discordapi-docs/blob/gh-pages/message.md#message-1)
-* [embed](https://github.com/devonium/discordapi-docs/blob/gh-pages/embed.md)
-* [command](https://github.com/devonium/discordapi-docs/blob/gh-pages/command.md)
+* [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message-1)
+* [embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md)
+* [command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md)

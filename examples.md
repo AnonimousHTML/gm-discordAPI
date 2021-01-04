@@ -1,3 +1,4 @@
+# ping-pong
 ```lua
 if discordClient
 then
@@ -17,7 +18,8 @@ discordClient.on("message","ping-pong-textOnly",function(message)
         message.reply("Pong!")
     end
 end)
-```  
+```
+# ping-pong + embed
 ```lua
 if discordClient
 then
@@ -29,7 +31,7 @@ discordClient.enableAutoReconnect()
 
 discordClient.login(token)
 
-discordClient.on("message","ping-pong-text+embedVersion",function(message)
+discordClient.on("message","ping-pong-text+embed",function(message)
     if message.author.bot then return end
 
     if message.content == "ping"
@@ -48,6 +50,7 @@ end)
 
 discordClient.login(token)
 ```  
+# simple chat relay
 ```lua
 [SERVER]
 util.AddNetworkString("chatPrint")

@@ -1,3 +1,6 @@
+# Some easy examples
+* [examples](https://github.com/devonium/gm-discordAPI/blob/doc/examples.md)
+
 discord
 ---
 

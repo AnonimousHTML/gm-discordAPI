@@ -180,7 +180,53 @@ this argument is used as the guild ID
 * `function` callback  
 
 ---
-# `addRole`
+# `createGuildRole`
+
+Description
+---
+All arguments except guild are optional
+
+# Arguments
+* `string` `guild` guild  
+this argument is used as the guild ID 
+* `string` name  
+* `permissions` permissions  
+* `color` color  
+* `boolean` hoist  
+* `boolean` mentionable  
+* `function` callback  
+
+---
+# `editGuildRole`
+
+Description
+---
+All arguments except guild are optional
+
+# Arguments
+* `string` `guild` guild  
+this argument is used as the guild ID 
+* `string` `role` role  
+this argument is used as the role ID 
+* `string` name  
+* `permissions` permissions  
+* `color` color  
+* `boolean` hoist  
+* `boolean` mentionable  
+* `function` callback  
+
+---
+# `deleteGuildRole`
+
+# Arguments
+* `string` `guild` guild  
+this argument is used as the guild ID 
+* `string` `role` role  
+this argument is used as the role ID 
+* `function` callback  
+
+---
+# `addMemberRole`
 
 # Arguments
 * `string` `guild` guild  
@@ -192,7 +238,7 @@ this argument is used as the role ID
 * `function` callback  
 
 ---
-# `removeRole`
+# `removeMemberRole`
 
 # Arguments
 * `string` `guild` guild  

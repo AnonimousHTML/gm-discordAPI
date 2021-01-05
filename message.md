@@ -93,7 +93,7 @@ the message associated with the message_reference
 
 Description
 ---
-Message constructor is used in client.sendMessage and client.sendMessageDM  
+Message constructor can be used in [client.sendMessage](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#sendmessage) and [client.sendMessageDM](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#sendmessagedm) as second argument
 
 
 ---

@@ -2,7 +2,7 @@
 
 Description
 ---
-Permissions constructor used in [client.createGuildRole](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#createguildrole) and [client.editGuildRole](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#editguildrole) as second argument
+Permissions constructor used in [client.createGuildRole](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#createguildrole) and [client.editGuildRole](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#editguildrole) as third argument
 
 # `add`
 

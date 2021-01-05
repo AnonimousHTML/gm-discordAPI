@@ -1,18 +1,10 @@
-local function numberTocolor(color)
-    color = color == 0 and 0xFFFFFF or color or 0xFFFFFF
-    local b, g, r = color % 256, math.floor(color / 256) % 256, math.floor(color / 65536)
-
-    return Color(r, g, b)
-end
-
 function discord.structures.guild(client, guild)
     client.guilds[guild.id] = guild
     local roles = {}
 
     for k, role in ipairs(guild.roles)
     do
-        role.color = numberTocolor(role.color)
-        roles[role.id] = role
+        roles[role.id] = discord.structures.role(client, role)
     end
 
     guild.roles = roles

@@ -32,7 +32,7 @@ function discord.messageEmbed(embed)
     end
 
     function embed.setColor(color)
-        embed.color = 65536 * color.r + 256 * color.g + color.b
+        embed.color = discord.resolver.colorToInt(color)
 
         return embed
     end

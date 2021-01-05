@@ -35,10 +35,37 @@ function discord.resolver.userID(obj)
     return tostring(obj)
 end
 
+function discord.resolver.guildID(obj)
+    if istable(obj) and obj._type == "guild" then
+        return obj.id
+    end
+
+    return tostring(obj)
+end
+
+function discord.resolver.roleID(obj)
+    if istable(obj) and obj._type == "role" then
+        return obj.id
+    end
+
+    return tostring(obj)
+end
+
+
 function discord.resolver.channelID(obj)
     if istable(obj) and obj._type == "channel" then
         return obj.id
     end
 
     return tostring(obj)
+end
+
+function discord.resolver.colorToInt(color)
+    color = color or color_white
+    return 65536 * color.r + 256 * color.g + color.b
+end
+
+function discord.resolver.intToColor(color)
+    color = color == 0 and 0xFFFFFF or color or 0xFFFFFF
+    return Color(math.floor(color / 65536), math.floor(color / 256) % 256, color % 256)
 end

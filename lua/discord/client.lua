@@ -139,7 +139,7 @@ function discord.client()
                 client.sessionID = payload.d.session_id
                 client.ACKReceived = nil
                 client.authed = true
-                client.user = payload.d.user
+                client.user = discord.structures.user(client, payload.d.user)
 
                 function client.user.setAvatar(imageData, callback)
                     client.HTTPRequest("users/@me", "PATCH", {
@@ -214,12 +214,13 @@ function discord.client()
                     client.emitEvent("messageUpdate", discord.structures.message(client, payload.d))
                 end
             elseif payload.t == "TYPING_START" then
-                local guild = client.getGuildByChannelID(payload.d.channel)
+                local guild = client.getGuildByChannelID(payload.d.channel_id)
 
                 if guild then
                     payload.d.guild_id = guild.id
-                    payload.d.member = guilds.members[client.user.id]
-                    payload.d.channel = guild.channels[payload.d.channel]
+                    payload.d.guild = guild
+                    payload.d.member = guild.members[client.user.id]
+                    payload.d.channel = guild.channels[payload.d.channel_id]
                 else
                     payload.d.channel = {
                         id = payload.d.channel
@@ -528,70 +529,88 @@ function discord.client()
         end)
     end
 
-    function client.kickMember(guild_id, user, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/members/" .. discord.resolver.userID(user), "DELETE", {}, callback and function(code, data, headers)
+    function client.kickMember(guild, user, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/members/" .. discord.resolver.userID(user), "DELETE", {}, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, 6)
     end
 
-    function client.banMember(guild_id, user, reason, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/bans/" .. discord.resolver.userID(user), "PUT", {
+    function client.banMember(guild, user, reason, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/bans/" .. discord.resolver.userID(user), "PUT", {
             reason = reason
         }, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, false)
     end
 
-    function client.unbanMember(guild_id, user, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/bans/" .. discord.resolver.userID(user), "DELETE", {
+    function client.unbanMember(guild, user, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/bans/" .. discord.resolver.userID(user), "DELETE", {
             d = "null"
         }, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, false)
     end
 
-    function client.getBanList(guild_id, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/bans", "GET", {}, callback and function(code, data, headers)
+    function client.getBanList(guild, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/bans", "GET", {}, callback and function(code, data, headers)
             callback(code ~= 200, data, headers)
         end)
     end
 
-    function client.addRole(guild_id, user, role, callback)
-        local role_id = role
+    function client.createGuildRole(guild,name, permissions, color, hoist, mentionable, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/roles", "POST", {
+            name = name,
+            permissions = permissions and permissions.bitfield,
+            color = color and discord.resolver.colorToInt(color),
+            hoist = hoist,
+            mentionable = mentionable
+        }, callback and function(code, data, headers)
+            callback(code ~= 200, data, headers)
+        end, 7)
+    end
 
-        if istable(role) and role.id then
-            role_id = role.id
-        end
+    function client.editGuildRole(guild, role, name, permissions, color, hoist, mentionable, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/roles/" .. discord.resolver.roleID(role), "PATCH", {
+            name = name,
+            permissions = permissions and permissions.bitfield,
+            color = color and discord.resolver.colorToInt(color),
+            hoist = hoist,
+            mentionable = mentionable
+        }, callback and function(code, data, headers)
+            callback(code ~= 200, data, headers)
+        end, 7)
+    end
 
-        client.HTTPRequest("guilds/" .. guild_id .. "/members/" .. discord.resolver.userID(user) .. "/roles/" .. role_id, "PUT", {
+    function client.deleteGuildRole(guild, role, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/roles/" .. discord.resolver.roleID(role), "DELETE", {}, callback and function(code, data, headers)
+            callback(code ~= 200, data, headers)
+        end, 7)
+    end
+
+    function client.addMemberRole(guild, user, role, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/members/" .. discord.resolver.userID(user) .. "/roles/" .. discord.resolver.roleID(role), "PUT", {
             d = "null"
         }, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, 7)
     end
 
-    function client.removeRole(guild_id, user, role, callback)
-        local role_id = role
-
-        if istable(role) and role.id then
-            role_id = role.id
-        end
-
-        client.HTTPRequest("guilds/" .. guild_id .. "/members/" .. discord.resolver.userID(user) .. "/roles/" .. role_id, "DELETE", {
+    function client.removeMemberRole(guild, user, role, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/members/" .. discord.resolver.userID(user) .. "/roles/" .. discord.resolver.roleID(role), "DELETE", {
             d = "null"
         }, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, 7)
     end
 
-    function client.setMemberNick(guild_id, user, nick, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/members/" .. discord.resolver.userID(user), "PATCH", {
+    function client.setMemberNick(guild, user, nick, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/members/" .. discord.resolver.userID(user), "PATCH", {
             nick = nick
         }, callback, 7)
     end
 
-    function client.setNick(guild_id, nick, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/members/@me/nick", "PATCH", {
+    function client.setNick(guild, nick, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/members/@me/nick", "PATCH", {
             nick = nick
         }, callback, 7)
     end
@@ -602,8 +621,8 @@ function discord.client()
         }, callback, 8)
     end
 
-    function client.getInvites(guild_id, callback)
-        client.HTTPRequest("guilds/" .. guild_id .. "/invites", "GET", {}, callback and function(code, data, headers)
+    function client.getInvites(guild, callback)
+        client.HTTPRequest("guilds/" .. discord.resolver.guildID(guild) .. "/invites", "GET", {}, callback and function(code, data, headers)
             callback(code ~= 200, data, headers)
         end, false)
     end

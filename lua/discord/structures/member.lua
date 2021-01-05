@@ -5,7 +5,7 @@ function discord.structures.guildMember(client, member, guild_id)
 
     for k, v in ipairs(member.roles)
     do
-        local role = client.getRoleByID(guild_id, v)
+        local role = client.guilds[guild_id].roles[v]
         if not role
         then continue end
 
@@ -23,7 +23,7 @@ function discord.structures.guildMember(client, member, guild_id)
 
         for k, v in ipairs(member.roles)
         do
-            local role = client.getRoleByID(guild_id, v)
+            local role = client.guilds[guild_id].roles[v]
             if not role
             then continue end
             roles[k] = role
@@ -35,7 +35,7 @@ function discord.structures.guildMember(client, member, guild_id)
     function member.hasPermission(permission)
         for k, v in ipairs(member.roles)
         do
-            local role = client.getRoleByID(guild_id, v)
+            local role = client.guilds[guild_id].roles[v]
             if not role
             then continue end
             if discord.hasPermission(role.permissions, permission) then return true end
@@ -57,7 +57,7 @@ function discord.structures.guildMember(client, member, guild_id)
         }, callback)
     end
 
-    local guild = client.getGuildByID(guild_id)
+    local guild = client.guilds[guild_id]
     function member.getPresence()
         return guild.presences[member.user.id]
     end

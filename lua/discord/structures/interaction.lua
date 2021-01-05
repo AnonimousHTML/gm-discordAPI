@@ -42,7 +42,7 @@ local function parseInteractionData(data, guild)
 end
 
 function discord.structures.userInteraction(client, interaction)
-    local guild = client.getGuildByID(interaction.guild_id)
+    local guild = client.guilds[interaction.guild_id]
     if not guild then return end
     interaction.channel = guild.channels[interaction.channel_id]
     interaction.member = discord.structures.guildMember(client, interaction.member, interaction.guild_id)

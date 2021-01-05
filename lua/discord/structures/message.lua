@@ -15,12 +15,12 @@ function discord.structures.message(client, message)
             client.sendMessageDM(message.author.id, msg, callback)
         end
     else
-        local guild = client.getGuildByID(message.guild_id)
+        local guild = client.guilds[message.guild_id]
 
         message.guild = guild
         message.channel = guild.channels[message.channel_id]
 
-        message.member = client.getMemberByID(message.guild_id, message.author.id)
+        message.member = guild.members[message.author.id]
         if message.member == nil then return end
         message.author = message.member.user
     end

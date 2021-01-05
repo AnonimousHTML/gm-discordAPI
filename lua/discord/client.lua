@@ -31,6 +31,8 @@ local function queue()
 end
 
 local JSONToTable = util.JSONToTable
+local pairs = pairs
+local ipairs = ipairs
 
 function discord.client()
     local client = {}
@@ -167,7 +169,7 @@ function discord.client()
                 local channel = discord.structures.channel(client, payload.d)
 
                 if payload.d.guild_id then
-                    local guild = client.getGuildByID(payload.d.guild_id, true)
+                    local guild = client.guilds[payload.d.guild_id]
                     guild.guild_hashes = payload.d.guild_hashes
                     channel.guild_hashes = nil
                     guild.channels[channel.id] = channel
@@ -176,7 +178,7 @@ function discord.client()
                 client.emitEvent("channelCreate", channel)
             elseif payload.t == "CHANNEL_DELETE" then
                 if payload.d.guild_id then
-                    local guild = client.getGuildByID(payload.d.guild_id, true)
+                    local guild = client.guilds[payload.d.guild_id]
                     guild.guild_hashes = payload.d.guild_hashes
                     local channel = guild.channels[payload.d.id]
                     guild.channels[payload.d.id] = nil
@@ -188,7 +190,7 @@ function discord.client()
                 local channel = discord.structures.channel(client, payload.d)
 
                 if payload.d.guild_id then
-                    local guild = client.getGuildByID(payload.d.guild_id, true)
+                    local guild = client.guilds[payload.d.guild_id]
                     guild.guild_hashes = payload.d.guild_hashes
                     channel.guild_hashes = nil
                     guild.channels[channel.id] = channel
@@ -216,7 +218,7 @@ function discord.client()
 
                 if guild then
                     payload.d.guild_id = guild.id
-                    payload.d.member = client.getMemberByID(payload.d.guild_id, client.user.id)
+                    payload.d.member = guilds.members[client.user.id]
                     payload.d.channel = guild.channels[payload.d.channel]
                 else
                     payload.d.channel = {
@@ -231,11 +233,11 @@ function discord.client()
                 client.emitEvent("typingStart", payload.d)
             elseif payload.t == "GUILD_ROLE_UPDATE" then
                 local role = payload.d.role
-                local guild = client.getGuildByID(payload.d.guild_id, true)
+                local guild = client.guilds[payload.d.guild_id]
                 guild.guild_hashes = payload.d.guild_hashes
                 guild.roles[role.id] = role
             elseif payload.t == "GUILD_MEMBER_ADD" then
-                local guild = client.getGuildByID(payload.d.guild_id, true)
+                local guild = client.guilds[payload.d.guild_id]
                 local member = discord.structures.guildMember(client, payload.d, payload.d.guild_id)
 
                 if guild.members[payload.d.user.id] == nil then
@@ -244,23 +246,23 @@ function discord.client()
 
                 guild.members[payload.d.user.id] = member
             elseif payload.t == "GUILD_MEMBERS_CHUNK" then
-                local guild = client.getGuildByID(payload.d.guild_id)
+                local guild = client.guilds[payload.d.guild_id]
                 if guild == nil then return end
 
                 for k, v in ipairs(payload.d.members) do
                     guild.members[v.user.id] = discord.structures.guildMember(client, v, payload.d.guild_id)
                 end
             elseif payload.t == "GUILD_MEMBER_UPDATE" then
-                local guild = client.getGuildByID(payload.d.guild_id, true)
+                local guild = client.guilds[payload.d.guild_id]
                 local member = discord.structures.guildMember(client, payload.d, payload.d.guild_id)
                 guild.members[payload.d.user.id] = member
                 client.emitEvent("guildMemberUpdate", guild, member)
             elseif payload.t == "GUILD_MEMBER_REMOVE" then
-                local guild = client.getGuildByID(payload.d.guild_id, true)
+                local guild = client.guilds[payload.d.guild_id]
                 client.emitEvent("guildMemberRemove", guild, guild.members[payload.d.user.id])
                 guild.members[payload.d.user.id] = nil
             elseif payload.t == "PRESENCE_UPDATE" then
-                local guild = client.getGuildByID(payload.d.guild_id, true) 
+                local guild = client.guilds[payload.d.guild_id]
                 local userID = payload.d.user.id
 
                 guild.presences[userID] = discord.structures.presence(client, payload.d)
@@ -268,7 +270,7 @@ function discord.client()
                 client.emitEvent("presenceUpdate", guild, payload.d)
             elseif payload.t == "MESSAGE_REACTION_ADD" then
                 local reaction = payload.d
-                reaction.member = client.getMemberByID(reaction.guild_id, reaction.user_id)
+                reaction.member = client.guilds[reaction.guild_id].members[reaction.user_id]
 
                 function reaction.deleteReaction(callback)
                     client.deleteReaction(reaction.channel, reaction.message_id, reaction.user_id, reaction.emoji.name, callback)
@@ -278,10 +280,10 @@ function discord.client()
                     client.createReaction(reaction.channel, reaction.message_id, emoji)
                 end
 
-                client.emitEvent("messageReactionAdd", payload.d)
+                client.emitEvent("messageReactionAdd", reaction)
             elseif payload.t == "MESSAGE_REACTION_REMOVE" then
                 local reaction = payload.d
-                reaction.member = client.getMemberByID(reaction.guild_id, reaction.user_id)
+                reaction.member = client.guilds[reaction.guild_id].members[reaction.user_id]
                 client.emitEvent("messageReactionRemove", payload.d)
             elseif payload.t == "INTERACTION_CREATE" then
                 client.emitEvent("interactionCreate", discord.structures.userInteraction(client, payload.d))
@@ -310,10 +312,9 @@ function discord.client()
                         end
 
                         if ratelimiter.remaining == 0 then return end
-                        local requestCount = requests.count
-                        if ratelimiter.remaining == ratelimiter.limit and requestCount == 0 then ratelimiter.reset = CurTime() + ratelimiter.reset_delay + 0.5 end
+                        if ratelimiter.remaining == ratelimiter.limit and requests.count == 0 then ratelimiter.reset = CurTime() + ratelimiter.reset_delay + 0.5 end
 
-                        for i = 1, math.min(ratelimiter.remaining, requestCount) do
+                        for i = 1, math.min(ratelimiter.remaining, requests.count) do
                             CHTTP(requests:pop())
                             ratelimiter.remaining = ratelimiter.remaining - 1
                         end
@@ -326,15 +327,23 @@ function discord.client()
                 client.ws:write([[{"op":6,"d":{"token":"]] .. client.token .. [[","session_id":"]] .. client.sessionID .. [[","seq":]] .. client.sequence .. [[}}]])
             end
         elseif payload.op == 9 then
-            client.sessionID = nil
-            timer.Simple(5, client.reconnect)
+            client.disconect()
+
+            -- we can't resume the session :(
+            if payload.d == false
+            then
+                client.sessionID = nil
+                return client.reconnect()
+            end
+
+            timer.Simple(2, client.reconnect)
         elseif payload.op == 11 then
             client.ACKReceived = true
         end
     end
 
     function client.ws:onDisconnected()
-        client.destroy()
+        client.disconect()
         client.emitEvent("close")
 
         if client.autoreconnect then
@@ -343,7 +352,7 @@ function discord.client()
     end
 
     function client.ws:onError(errMessage)
-        client.destroy()
+        client.disconect()
         error(errMessage)
         client.emitEvent("error", errMessage)
 
@@ -353,24 +362,35 @@ function discord.client()
     end
 
     function client.login(token)
+        if client and client.connected then return end
         client.token = token
-        client.authed = false
         client.uid = util.CRC(client.token)
+        client.disconect()
         client.ws:open()
+        client.connected = true
+    end
+
+    function client.disconect()
+        if client.uid
+        then
+            timer.Remove("discord" .. client.uid .. "heartbeat")
+            hook.Remove("Think", "discord" .. client.uid .. "ratelimiter")
+        end
+        if client and client.connected then
+            client.ws:clearQueue()
+            client.ws:closeNow()
+        end
+        client.connected = false
+        client.authed = false
     end
 
     function client.destroy()
-        timer.Remove("discord" .. client.uid .. "heartbeat")
-        timer.Remove("discord" .. client.uid .. "ratelimiter")
-        hook.Remove("Think", "discord" .. client.uid .. "ratelimiter")
-
-        if client and client.ws:isConnected() then
-            client.ws:closeNow()
-        end
+        client.autoreconnect = false
+        client.disconect()
     end
 
     function client.reconnect()
-        client.destroy()
+        client.disconect()
         client.login(client.token)
     end
 
@@ -378,77 +398,29 @@ function discord.client()
         client.autoreconnect = true
     end
 
-    function client.getGuildByID(guild_id, safe)
-        local guild = client.guilds[guild_id]
-
-        if safe then
-            guild = guild or {
-                guild_hashes = {},
-                channels = {},
-                voice_states = {},
-                features = {},
-                members = {},
-                presences = {}
-            }
-        end
-
-        return client.guilds[guild_id]
-    end
-
-    function client.getMemberByID(guild_id, member_id)
-        local guild = client.getGuildByID(guild_id, true)
-
-        return guild.members[member_id]
-    end
-
-    function client.getEmojyByName(guild_id, emoji_name)
-        local guild = client.getGuildByID(guild_id, true)
-
-        for k, v in ipairs(guild.emojis) do
-            if v.name == emoji_name then return v end
-        end
-    end
-
-    function client.getRoleByName(guild_id, role_name)
-        local guild = client.getGuildByID(guild_id)
-        if not guild then return end
-
-        for k, v in pairs(guild.roles) do
-            if v.name == role_name then return v end
-        end
-    end
-
-    function client.getRoleByID(guild_id, role_id)
-        local guild = client.getGuildByID(guild_id)
-        if not guild then return end
-
-        return guild.roles[role_id]
-    end
-
-    function client.getGuildByChannelID(channel)
+    function client.getGuildByChannelID(channel_id)
         for k, guild in pairs(client.guilds) do
-            for k, v in pairs(guild.channels) do
-                if v.id == channel then return guild end
-            end
+            if guild.channels[channel_id] then return guild end
         end
     end
-
 
     function client.sendMessage(channel, msg, callback)
         client.HTTPRequest("channels/" .. discord.resolver.channelID(channel) .. "/messages", "POST", discord.resolver.message(msg), callback and function(code, data, headers)
             local error = code ~= 200
 
             if not error then
-                local guild = client.getGuildByChannelID(data.channel)
+                local guild = client.getGuildByChannelID(data.channel_id)
 
                 if guild then
                     data.guild_id = guild.id
-                    data.member = client.getMemberByID(data.guild_id, client.user.id)
+                    data.guild = guild
+                    data.member = guild.members[data.author.id]
+                    data.channel = guild.channels[data.channel_id]
                 end
 
                 data = discord.structures.message(client, data)
-            end
 
+            end
             callback(error, data, headers)
         end, 4)
     end
@@ -460,10 +432,11 @@ function discord.client()
             if not error then
                 local guild = client.getGuildByChannelID(data.channel_id)
 
-                if guild != nil then
+                if guild then
                     data.guild_id = guild.id
-                    data.member = client.getMemberByID(data.guild_id, client.user.id)
-                    data.channel = client.getMemberByID(data.guild_id, client.user.id)
+                    data.guild = guild
+                    data.member = guild.members[data.author.id]
+                    data.channel = guild.channels[data.channel_id]
                 end
 
                 data = discord.structures.message(client, data)
@@ -478,7 +451,15 @@ function discord.client()
             local error = code ~= 200
 
             if not error then
-                data.guild_id = client.getGuildByChannelID(data.channel).id
+                local guild = client.getGuildByChannelID(data.channel_id)
+
+                if guild then
+                    data.guild_id = guild.id
+                    data.guild = guild
+                    data.member = guild.members[data.author.id]
+                    data.channel = guild.channels[data.channel_id]
+                end
+
                 data = discord.structures.message(client, data)
             end
 

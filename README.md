@@ -31,3 +31,4 @@ constructors
 * [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message-1)
 * [embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md)
 * [command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md)
+* [permissions](https://github.com/devonium/gm-discordAPI/blob/doc/permissions.md)

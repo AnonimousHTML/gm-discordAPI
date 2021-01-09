@@ -78,9 +78,17 @@ function discord.structures.interaction(client, interaction, global)
         function interaction.delete(callback)
             client.deleteGlobalCommand(interaction.id, callback)
         end
+
+        function interaction.edit(command, callback)
+            client.editGlobalCommand(command, interaction.id, callback)
+        end
     else
         function interaction.delete()
             client.deleteGuildCommand(interaction.id, interaction.guild_id, callback)
+        end
+
+        function interaction.edit(command, callback)
+            client.editGuildCommand(command,interaction.guild_id, interaction.id, callback)
         end
     end
 

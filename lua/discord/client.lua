@@ -347,19 +347,20 @@ function discord.client()
         client.disconect()
         client.emitEvent("close")
 
-        if client.autoreconnect then
+        if client.autoreconnect
+        then
             client.reconnect()
         end
     end
 
     function client.ws:onError(errMessage)
         client.disconect()
-        error(errMessage)
         client.emitEvent("error", errMessage)
-
-        if client.autoreconnect then
-            client.reconnect()
+        if errMessage == "Connection failed: The I/O operation has been aborted because of either a thread exit or an application request"
+        then
+            client.criticalerror = true
         end
+        error(errMessage)
     end
 
     function client.login(token)
@@ -392,6 +393,9 @@ function discord.client()
 
     function client.reconnect()
         client.disconect()
+        if client.criticalerror then return timer.Simple(5, function() client.login(client.token) end) end
+        --                                  don't sure it's gonna work
+
         client.login(client.token)
     end
 
@@ -668,6 +672,22 @@ function discord.client()
         end, 3)
     end
 
+    function client.getGlobalCommands(callback)
+        client.HTTPRequest("/applications/" .. client.user.id .. "/commands", "GET", {}, callback and function(code, data, headers)
+            local error = code ~= 200
+            if not error then
+                local commands = {}
+                for k,v in ipairs(data)
+                do
+                    commands[v.name] = discord.structures.interaction(client, v, true)
+                end
+                data = commands
+            end
+
+            callback(error, data, headers)
+        end, false)
+    end
+
     function client.createGlobalCommand(command, callback)
         client.HTTPRequest("/applications/" .. client.user.id .. "/commands", "POST", command, callback and function(code, data, headers)
             local error = code ~= 200
@@ -698,34 +718,54 @@ function discord.client()
         end, false)
     end
 
-    function client.createGuildCommand(command, guild_id, callback)
+    function client.getGuildCommands(guild, callback)
+        local guild_id = discord.resolver.guildID(guild)
+        client.HTTPRequest("/applications/" .. client.user.id .. "/guilds/" .. guild_id .. "/commands", "GET", {}, callback and function(code, data, headers)
+            local error = code ~= 200
+
+            if not error then
+                local commands = {}
+                for k,v in ipairs(data)
+                do
+                    v.guild_id = guild_id
+                    commands[v.name] = discord.structures.interaction(client, v)
+                end
+                data = commands
+            end
+            callback(error, data, headers)
+        end, false)
+    end
+
+    function client.createGuildCommand(command, guild, callback)
+        local guild_id = discord.resolver.guildID(guild)
         client.HTTPRequest("/applications/" .. client.user.id .. "/guilds/" .. guild_id .. "/commands", "POST", command, callback and function(code, data, headers)
             local error = code ~= 200
 
             if not error then
                 data.guild_id = guild_id
-                data = discord.structures.interaction(client, data, true)
+                data = discord.structures.interaction(client, data)
             end
 
             callback(error, data, headers)
         end, false)
     end
 
-    function client.editGuildCommand(command, guild_id, command_id, callback)
+    function client.editGuildCommand(command, guild, command_id, callback)
+        local guild_id = discord.resolver.guildID(guild)
         client.HTTPRequest("/applications/" .. client.user.id .. "/guilds/" .. guild_id .. "/commands/" .. command_id, "PATCH", command, callback and function(code, data, headers)
             local error = code ~= 200
 
             if not error then
                 data.guild_id = guild_id
-                data = discord.structures.interaction(client, data, true)
+                data = discord.structures.interaction(client, data)
             end
 
             callback(error, data, headers)
         end, false)
     end
 
-    function client.deleteGuildCommand(guild_id, command_id, callback)
-        client.HTTPRequest("/applications/" .. client.user.id .. "/guilds/" .. guild_id .. "/commands/" .. command_id, "DELETE", {}, callback and function(code, data, headers)
+    function client.deleteGuildCommand(guild, command_id, callback)
+        client.HTTPRequest("/applications/" .. client.user.id .. "/guilds/" .. discord.resolver.guildID(guild) .. "/commands/" .. command_id, "DELETE", {}, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, false)
     end

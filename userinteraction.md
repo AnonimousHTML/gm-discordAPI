@@ -26,14 +26,14 @@ a continuation token for responding to the interaction
 * `function` callback  
 
 ---
-# `editResponce`
+# `editResponse`
 
 # Arguments
 * `string` `message` `embed` message  
 * `function` callback  
 
 ---
-# `deleteResponce`
+# `deleteResponse`
 
 # Arguments
 * `function` callback  

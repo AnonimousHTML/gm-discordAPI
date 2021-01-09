@@ -359,10 +359,12 @@ this argument is used as the channel ID
 * `string` command_id  
 * `function` callback  
 ---
-# `createGlobalCommand`
+# `createGuildCommand`
 
 # Arguments
 * `command` command  
+* `string` `guild` guild  
+this argument is used as the guild ID 
 * `function` callback  
 ---
 # `getGuildCommands`
@@ -382,7 +384,7 @@ this argument is used as the guild ID
 * `string` command_id  
 * `function` callback  
 ---
-# `deleteGlobalCommand`
+# `deleteGuildCommand`
 
 # Arguments
 * `string` `guild` guild  

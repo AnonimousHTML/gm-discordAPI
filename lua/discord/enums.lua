@@ -63,5 +63,14 @@ discord.enums = {
         USER	= 6,
         CHANNEL	= 7,
         ROLE	= 8
-    }
+    },
+
+    response_type =
+    {
+        Pong = 1,                        -- ACK a Ping
+        Acknowledge = 2,                 -- ACK a command without sending a message, eating the user's input
+        ChannelMessage = 3,              -- respond with a message, eating the user's input
+        ChannelMessageWithSource = 4,    -- respond with a message, showing the user's input
+        AcknowledgeWithSource = 5,	    -- ACK a command without sending a message, showing the user's input
+    },
 }

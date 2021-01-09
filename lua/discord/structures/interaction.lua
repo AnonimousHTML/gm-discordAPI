@@ -47,7 +47,7 @@ function discord.structures.userInteraction(client, interaction)
     interaction.channel = guild.channels[interaction.channel_id]
     interaction.member = discord.structures.guildMember(client, interaction.member, interaction.guild_id)
 
-    function interaction.responce(type, message, callback)
+    function interaction.response(type, message, callback)
         client.HTTPRequest("interactions/" .. interaction.id .. "/" .. interaction.token .. "/callback", "POST", {
             type = type,
             data = message
@@ -56,13 +56,13 @@ function discord.structures.userInteraction(client, interaction)
         end)
     end
 
-    function interaction.editResponce(params, callback)
+    function interaction.editResponse(params, callback)
         client.HTTPRequest("webhooks/" .. client.user.id .. "/" .. interaction.token .. "/messages/@original", "PATCH", params, callback and function(code, data, headers)
             callback(code ~= 200, data, headers)
         end)
     end
 
-    function interaction.deleteResponce()
+    function interaction.deleteResponse()
         client.HTTPRequest("webhooks/" .. client.user.id .. "/" .. interaction.token .. "/messages/@original", "DELETE", {}, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end)

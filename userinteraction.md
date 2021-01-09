@@ -1,4 +1,5 @@
-# user-interaction
+### user-interaction
+---
 
 # Properties
 * `string` id  
@@ -21,7 +22,7 @@ a continuation token for responding to the interaction
 # `responce`
 
 # Arguments
-* `integer` type  
+* `integer` [type](https://github.com/devonium/gm-discordAPI/blob/de1a26c6f7c185053ece6dba9eeb4425a3c33ec4/lua/discord/enums.lua#L68)  
 * `string` `message` `embed` message  
 * `function` callback  
 
@@ -39,14 +40,22 @@ a continuation token for responding to the interaction
 * `function` callback  
 
 ---
-# interaction
-
-
+### interaction
 ---
+
+Description
+---
+Interaction structure is used in [client.getClobalCommands](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#getglobalcommands)-[client.deleteGuildCommand](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#deleteguildcommand)
+
 # Methods
 # `delete`
-
 # Arguments
+* `function` callback  
+
+# `edit`
+# Arguments
+* `command` command
+* `function` callback  
 * `function` callback  
 
 ---

@@ -333,10 +333,17 @@ this argument is used as the channel ID
 * `function` callback  
 
 ---
+# `getGlobalCommands`
+
+# Arguments
+* `function` callback  
+
+---
 # `createGlobalCommand`
 
 # Arguments
 * `command` command  
+* `function` callback  
 
 ---
 # `editGlobalCommand`
@@ -344,17 +351,42 @@ this argument is used as the channel ID
 # Arguments
 * `command` command  
 * `string` command_id  
-
+* `function` callback  
 ---
 # `deleteGlobalCommand`
 
 # Arguments
 * `string` command_id  
-
+* `function` callback  
 ---
 # `createGlobalCommand`
 
 # Arguments
 * `command` command  
+* `function` callback  
+---
+# `getGuildCommands`
 
+# Arguments
+* `string` `guild` guild  
+this argument is used as the guild ID 
+* `function` callback  
+
+---
+# `editGuildCommand`
+
+# Arguments
+* `command` command  
+* `string` `guild` guild  
+this argument is used as the guild ID 
+* `string` command_id  
+* `function` callback  
+---
+# `deleteGlobalCommand`
+
+# Arguments
+* `string` `guild` guild  
+this argument is used as the guild ID 
+* `string` command_id 
+* `function` callback  
 ---

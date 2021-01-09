@@ -1,6 +1,9 @@
 ### user-interaction
 ---
 
+Description
+---
+User Interaction structure is used in [interactionCreate](https://github.com/devonium/gm-discordAPI/blob/doc/events.md#interactioncreate)
 # Properties
 * `string` id  
 id of the interaction  

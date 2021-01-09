@@ -38,7 +38,7 @@ function discord.structures.message(client, message)
     end
 
     function message.edit(msg, callback)
-        client.editMessage(message.channel_id, message.id, callback)
+        client.editMessage(message.channel_id, message.id, msg, callback)
     end
 
     function message.pin(callback)

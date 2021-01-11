@@ -292,7 +292,7 @@ function discord.client()
         elseif payload.op == 10 then
             if client.sessionID == nil then
                 timer.Create("discord" .. client.uid .. "heartbeat", payload.d.heartbeat_interval / 1000, 0, function()
-                    if discordClient.ws:isConnected() then return end
+                    if client.ws:isConnected() then return end
                     if client.ACKReceived == false then
                         client.reconnect()
                     end
@@ -358,7 +358,7 @@ function discord.client()
     end
 
     function client.login(token)
-        if client and discordClient.ws:isConnected() then return end
+        if client and client.ws:isConnected() then return end
         client.token = token
         client.uid = util.CRC(client.token)
         client.disconect()
@@ -371,7 +371,7 @@ function discord.client()
             timer.Remove("discord" .. client.uid .. "heartbeat")
             hook.Remove("Think", "discord" .. client.uid .. "ratelimiter")
         end
-        if client and discordClient.ws:isConnected() then
+        if client and client.ws:isConnected() then
             client.ws:clearQueue()
             client.ws:closeNow()
         end

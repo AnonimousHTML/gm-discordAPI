@@ -291,41 +291,42 @@ function discord.client()
             client.reconnect()
         elseif payload.op == 10 then
             if client.sessionID == nil then
-                timer.Create("discord" .. client.uid .. "heartbeat", payload.d.heartbeat_interval / 1000, 0, function()
-                    if client.ws:isConnected() then return end
-                    if client.ACKReceived == false then
-                        client.reconnect()
-                    end
-
-                    client.ACKReceived = false
-                    client.ws:write([[{"op":1,"d":]] .. client.sequence .. [[}]])
-                end)
-
-                hook.Add("Think", "discord" .. client.uid .. "ratelimiter", function()
-                    for i = 1, #client.ratelimiter do
-                        local ratelimiter = client.ratelimiter[i]
-                        local requests = ratelimiter.requests
-
-                        if ratelimiter.reset < CurTime() then
-                            ratelimiter.remaining = ratelimiter.limit
-                            ratelimiter.reset = CurTime() + ratelimiter.reset_delay + 0.5
-                        end
-
-                        if ratelimiter.remaining == 0 then return end
-                        if ratelimiter.remaining == ratelimiter.limit and requests.count == 0 then ratelimiter.reset = CurTime() + ratelimiter.reset_delay + 0.5 end
-
-                        for i = 1, math.min(ratelimiter.remaining, requests.count) do
-                            CHTTP(requests:pop())
-                            ratelimiter.remaining = ratelimiter.remaining - 1
-                        end
-
-                    end
-                end)
-
                 client.ws:write([[{"op":2,"d":{"token":"]] .. client.token .. [[","properties":{"$os":"linux","$browser":"gmod-dapi","$device":"gmod-dapi"}}}]])
             else
                 client.ws:write([[{"op":6,"d":{"token":"]] .. client.token .. [[","session_id":"]] .. client.sessionID .. [[","seq":]] .. client.sequence .. [[}}]])
             end
+
+            timer.Create("discord" .. client.uid .. "heartbeat", payload.d.heartbeat_interval / 1000, 0, function()
+                if client.ws:isConnected() then return end
+                if client.ACKReceived == false then
+                    client.reconnect()
+                end
+
+                client.ACKReceived = false
+                client.ws:write([[{"op":1,"d":]] .. client.sequence .. [[}]])
+            end)
+
+            hook.Add("Think", "discord" .. client.uid .. "ratelimiter", function()
+                for i = 1, #client.ratelimiter do
+                    local ratelimiter = client.ratelimiter[i]
+                    local requests = ratelimiter.requests
+
+                    if ratelimiter.reset < CurTime() then
+                        ratelimiter.remaining = ratelimiter.limit
+                        ratelimiter.reset = CurTime() + ratelimiter.reset_delay + 0.5
+                    end
+
+                    if ratelimiter.remaining == 0 then return end
+                    if ratelimiter.remaining == ratelimiter.limit and requests.count == 0 then ratelimiter.reset = CurTime() + ratelimiter.reset_delay + 0.5 end
+
+                    for i = 1, math.min(ratelimiter.remaining, requests.count) do
+                        CHTTP(requests:pop())
+                        ratelimiter.remaining = ratelimiter.remaining - 1
+                    end
+
+                end
+            end)
+
         elseif payload.op == 9 then
             client.disconect()
 

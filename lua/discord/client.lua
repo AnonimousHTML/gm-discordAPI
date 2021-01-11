@@ -37,7 +37,6 @@ local ipairs = ipairs
 function discord.client()
     local client = {}
     client.ws = GWSockets.createWebSocket("wss://gateway.discord.gg/?v=6&encoding=json")
-    client.authed = false
 
     client.user = {}
     client.guilds = {}
@@ -138,7 +137,6 @@ function discord.client()
             if payload.t == "READY" then
                 client.sessionID = payload.d.session_id
                 client.ACKReceived = nil
-                client.authed = true
                 client.user = discord.structures.user(client, payload.d.user)
 
                 function client.user.setAvatar(imageData, callback)
@@ -294,6 +292,7 @@ function discord.client()
         elseif payload.op == 10 then
             if client.sessionID == nil then
                 timer.Create("discord" .. client.uid .. "heartbeat", payload.d.heartbeat_interval / 1000, 0, function()
+                    if discordClient.ws:isConnected() then return end
                     if client.ACKReceived == false then
                         client.reconnect()
                     end
@@ -354,22 +353,16 @@ function discord.client()
     end
 
     function client.ws:onError(errMessage)
-        client.disconect()
         client.emitEvent("error", errMessage)
-        if errMessage == "Connection failed: The I/O operation has been aborted because of either a thread exit or an application request"
-        then
-            client.criticalerror = true
-        end
-        error(errMessage)
+        error("[DISCORD] " .. errMessage,0)
     end
 
     function client.login(token)
-        if client and client.connected then return end
+        if client and discordClient.ws:isConnected() then return end
         client.token = token
         client.uid = util.CRC(client.token)
         client.disconect()
         client.ws:open()
-        client.connected = true
     end
 
     function client.disconect()
@@ -378,12 +371,10 @@ function discord.client()
             timer.Remove("discord" .. client.uid .. "heartbeat")
             hook.Remove("Think", "discord" .. client.uid .. "ratelimiter")
         end
-        if client and client.connected then
+        if client and discordClient.ws:isConnected() then
             client.ws:clearQueue()
             client.ws:closeNow()
         end
-        client.connected = false
-        client.authed = false
     end
 
     function client.destroy()
@@ -393,9 +384,6 @@ function discord.client()
 
     function client.reconnect()
         client.disconect()
-        if client.criticalerror then return timer.Simple(5, function() client.login(client.token) end) end
-        --                                  don't sure it's gonna work
-
         client.login(client.token)
     end
 

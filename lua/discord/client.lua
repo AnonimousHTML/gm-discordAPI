@@ -407,9 +407,7 @@ function discord.client()
 
                 if guild then
                     data.guild_id = guild.id
-                    data.guild = guild
                     data.member = guild.members[data.author.id]
-                    data.channel = guild.channels[data.channel_id]
                 end
 
                 data = discord.structures.message(client, data)
@@ -428,9 +426,7 @@ function discord.client()
 
                 if guild then
                     data.guild_id = guild.id
-                    data.guild = guild
                     data.member = guild.members[data.author.id]
-                    data.channel = guild.channels[data.channel_id]
                 end
 
                 data = discord.structures.message(client, data)
@@ -449,9 +445,7 @@ function discord.client()
 
                 if guild then
                     data.guild_id = guild.id
-                    data.guild = guild
                     data.member = guild.members[data.author.id]
-                    data.channel = guild.channels[data.channel_id]
                 end
 
                 data = discord.structures.message(client, data)

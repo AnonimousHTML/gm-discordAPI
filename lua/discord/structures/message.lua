@@ -25,12 +25,19 @@ function discord.structures.message(client, message)
         message.author = message.member.user
     end
 
-    for k, v in ipairs(message.embeds) do
-        message.embeds[k] = discord.messageEmbed(v)
+    if message.referenced_message then
+
+        local guild = client.guilds[message.message_reference.guild_id]
+        if guild
+        then
+            message.referenced_message.guild_id = message.message_reference.guild_id
+            message.referenced_message.member = guild.members[message.referenced_message.author.id]
+        end
+        message.referenced_message = discord.structures.message(client, message.referenced_message)
     end
 
-    if message.referenced_message then
-        message.referenced_message = discord.structures.message(client, message.referenced_message)
+    for k, v in ipairs(message.embeds) do
+        message.embeds[k] = discord.messageEmbed(v)
     end
 
     function message.delete(callback)

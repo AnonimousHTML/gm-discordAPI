@@ -75,11 +75,7 @@ discordClient.on("message","chatRelay",function(message)
     if message.author.id == discordClient.user.id or message.dm then return end
     if message.channel.id != relayChannelID then return end
 
-    chatPrint("[DISCORD] " , message.member.color, message.member.nick, "\n", color_white, message.content)
-    for k, v in pairs(message.attachments)
-    do
-        chatPrint("[DISCORD] " , message.member.color, message.member.nick, "\n", color_white, v.proxy_url)
-    end
+    chatPrint("[DISCORD] " , message.member.color, message.member.nick, "\n", color_white, message.content, message.attachments[1] and "\n" .. message.attachments[1].proxy_url)
 end)
 
 hook.Add("PlayerSay", "chatRelay", function(ply,text)

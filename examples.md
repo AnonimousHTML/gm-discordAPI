@@ -1,5 +1,7 @@
 # ping-pong
 ```lua
+local token = ""
+
 if discordClient
 then
     discordClient.destroy()
@@ -20,6 +22,8 @@ end)
 ```
 # ping-pong + embed
 ```lua
+local token = ""
+
 if discordClient
 then
     discordClient.destroy()
@@ -51,6 +55,8 @@ discordClient.login(token)
 # simple chat relay
 ```lua
 [SERVER]
+local token = ""
+
 util.AddNetworkString("chatPrint")
 
 -- This is a bad implementation of chatprint it is written just for example
@@ -107,5 +113,89 @@ end)
 [CLIENT]
 net.Receive("chatPrint", function()
     chat.AddText(unpack(net.ReadTable()))
+end)
+```
+# command-creation-example
+```lua
+local token = ""
+local guildID = ""
+
+if discordClient
+then
+    discordClient.destroy()
+end
+
+discordClient = discord.client()
+discordClient.enableAutoReconnect()
+discordClient.login(token)
+
+discordClient.on("ready","chatRelay",function()
+    local exampleCommand = discord.command()
+
+    exampleCommand.setName("example")
+    exampleCommand.addSubGroup(
+        discord.subgroup()
+        .setName("ulx")
+
+        .addCommand(
+            discord.command()
+            .setName("kick")
+            .addOption(
+                discord.option()
+                .setName("ply")
+                .setDescription("player's name")
+                .setType(discord.enums.command_option_type.STRING)
+                .setRequired(true)
+            )
+            .addOption(
+                discord.option()
+                .setName("reason")
+                .setType(discord.enums.command_option_type.STRING)
+                .setRequired(true)
+            )
+        )
+        .addCommand(
+            discord.command()
+            .setName("ban")
+
+            .addOption(
+                discord.option()
+                .setName("ply")
+                .setDescription("player's name")
+                .setType(discord.enums.command_option_type.STRING)
+                .setRequired(true)
+            )
+            .addOption(
+                discord.option()
+                .setName("reason")
+                .setType(discord.enums.command_option_type.STRING)
+                .setRequired(true)
+            )
+            .addOption(
+                discord.option()
+                .setName("len")
+                .setType(discord.enums.command_option_type.STRING)
+                .setRequired(true)
+
+                .addChoice("1Minute", "60")
+                .addChoice("5Minute", "300")
+                .addChoice("10Minute", "600")
+                .addChoice("15Minute", "900")
+            )
+        )
+    )
+
+    exampleCommand.addSubCommand(
+        discord.command()
+        .setName("lua")
+        .addOption(
+            discord.option()
+            .setName("code")
+            .setType(discord.enums.command_option_type.STRING)
+            .setRequired(true)
+        )
+    )
+
+    discordClient.createGuildCommand(exampleCommand, guildID)
 end)
 ```

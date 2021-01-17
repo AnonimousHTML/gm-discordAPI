@@ -335,14 +335,14 @@ this argument is used as the channel ID
 # `void` `createGlobalCommand`
 
 # Arguments
-* `command` command  
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
 * `function` callback  
 
 ---
 # `void` `editGlobalCommand`
 
 # Arguments
-* `command` command  
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
 * `string` command_id  
 * `function` callback  
 
@@ -357,7 +357,7 @@ this argument is used as the channel ID
 # `void` `deleteGlobalCommand`
 
 # Arguments
-* `command` command  
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
 * `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
 this argument is used as the guild ID 
 * `function` callback  

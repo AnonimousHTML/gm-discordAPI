@@ -41,7 +41,7 @@ one of jpg,jpeg,png,webp,gif
 # `void` `send`
 
 # Arguments
-* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) `embed` message  
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** `embed` message  
 * `function` callback  
 
 ---

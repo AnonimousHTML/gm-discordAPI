@@ -3,7 +3,7 @@
 
 Description
 ---
-!!Requires `applications.commands` scope!!
+!!Requires `applications.commands` scope!!  
 [About slash-command limits](https://discord.com/developers/docs/interactions/slash-commands#a-quick-note-on-limits)  
 
 

@@ -15,7 +15,7 @@
 * `string` description  
 
 ---
-# `void` `addSubCommand`
+# `void` `addCommand`
 
 # Arguments
 * **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  

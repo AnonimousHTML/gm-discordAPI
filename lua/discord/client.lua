@@ -782,7 +782,7 @@ function discord.client()
                 ["Authorization"] = "Bot " .. client.token,
                 ["Content-Type"] = "application/json"
             },
-            body = TableToJSON(postdata),
+            body = _TableToJSON(postdata),
             success = callback and function(code, json, headers)
                 callback(code, util.JSONToTable(json), headers)
             end,

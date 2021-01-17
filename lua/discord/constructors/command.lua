@@ -51,6 +51,8 @@ function discord.subgroup()
     subgroup.setType = nil
     subgroup.addSubGroup = nil
     subgroup.addOption = nil
+    subgroup.addCommand = subgroup.addSubCommand
+    subgroup.addSubCommand = nil
 
     subgroup._type = "subgroup"
     return subgroup

@@ -31,6 +31,13 @@ local function queue()
 end
 
 local JSONToTable = util.JSONToTable
+local _TableToJSON = util.TableToJSON
+local _r = function(int) return int end
+local function TableToJSON(table)
+    -- fkin double
+    return _TableToJSON(table):gsub("(:[%d]+)%.[%d]+",_r)
+end
+
 local pairs = pairs
 local ipairs = ipairs
 
@@ -38,7 +45,8 @@ function discord.client()
     local client = {}
     client.ws = GWSockets.createWebSocket("wss://gateway.discord.gg/?v=6&encoding=json")
 
-    client.user = {}
+    client.user = { presence = discord.presence() }
+
     client.guilds = {}
     client.private_channels = {}
 
@@ -150,6 +158,19 @@ function discord.client()
                         username = username
                     }, callback)
                 end
+
+                function client.user.setPresence(presence)
+                    client.user.presence = presence
+                    client.ws:write(string.Replace([[{"op":3,"d":]] .. TableToJSON(presence) .. [[}]] , "\"null\"", "null"))
+                end
+
+                function client.user.setStatus(status)
+                    client.user.setPresence(
+                        discord.presence()
+                        .setStatus(status)
+                    )
+                end
+
             elseif payload.t == "GUILD_CREATE" then
                 local guild = payload.d
                 client.guilds[guild.id] = discord.structures.guild(client, guild)
@@ -290,8 +311,9 @@ function discord.client()
         elseif payload.op == 7 then
             client.reconnect()
         elseif payload.op == 10 then
+
             if client.sessionID == nil then
-                client.ws:write([[{"op":2,"d":{"token":"]] .. client.token .. [[","properties":{"$os":"linux","$browser":"gmod-dapi","$device":"gmod-dapi"}}}]])
+                client.ws:write([[{"op":2,"d":{"token":"]] .. client.token .. [[","presence":]] .. string.Replace([[{"op":3,"d":]] .. TableToJSON(client.user.presence) .. [[}]] , "\"null\"", "null") .. [[,"properties":{"$os":"linux","$browser":"gmod-dapi","$device":"gmod-dapi"}}}]])
             else
                 client.ws:write([[{"op":6,"d":{"token":"]] .. client.token .. [[","session_id":"]] .. client.sessionID .. [[","seq":]] .. client.sequence .. [[}}]])
             end
@@ -760,7 +782,7 @@ function discord.client()
                 ["Authorization"] = "Bot " .. client.token,
                 ["Content-Type"] = "application/json"
             },
-            body = util.TableToJSON(postdata),
+            body = TableToJSON(postdata),
             success = callback and function(code, json, headers)
                 callback(code, util.JSONToTable(json), headers)
             end,

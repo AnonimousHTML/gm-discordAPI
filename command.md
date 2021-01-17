@@ -5,7 +5,7 @@ Description
 ---
 [!!Requires `applications.commands` scope!!](https://discord.com/developers/docs/interactions/slash-commands#authorizing-your-application)  
 [About slash-command limits](https://discord.com/developers/docs/interactions/slash-commands#a-quick-note-on-limits)  
-[Example](https://github.com/devonium/gm-discordAPI/blob/doc/examples.md#command-creation-example)  
+[Command creation example](https://github.com/devonium/gm-discordAPI/blob/doc/examples.md#command-creation-example)  
 
 
 ---

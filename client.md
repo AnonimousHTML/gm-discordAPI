@@ -1,7 +1,7 @@
 # client
 
 # Properties
-* `user` user  
+* [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) user  
 
 ---
 # Methods
@@ -34,24 +34,24 @@
 # `void` `sendMessage`
 
 # Arguments
-* `string` `channel` channel  
-* `string` (message-reference-url) `embed` message  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) `embed` message  
 * `function` callback  
 
 ---
 # `void` `sendMessageDM`
 
 # Arguments
-* `string` `user` message  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) message  
 this argument is used as the user ID 
-* `string` (message-reference-url) `embed` message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) `embed` message  
 * `function` callback  
 
 ---
 # `void` `getMessage`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 * `string` message_id  
 * `function` callback  
 
@@ -59,20 +59,20 @@ this argument is used as the user ID
 # `void` `editMessage`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
-* `string` (message-reference-url) `embed` editedMessage  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) `embed` editedMessage  
 * `function` callback  
 
 ---
 # `void` `deleteMessage`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
 * `function` callback  
 
@@ -80,9 +80,9 @@ this argument is used as the message ID
 # `void` `createReaction`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
 * `string` `reaction ` emoji  
 * `function` callback  
@@ -91,11 +91,11 @@ this argument is used as the message ID
 # `void` `deleteReaction`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
-* `string` `user` message  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) message  
 this argument is used as the user ID 
 * `string` `reaction ` emoji  
 * `function` callback  
@@ -104,9 +104,9 @@ this argument is used as the user ID
 # `void` `deleteAllReactions`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
 * `function` callback  
 
@@ -114,7 +114,7 @@ this argument is used as the message ID
 # `void` `pinMessage`
 
 # Arguments
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
 * `function` callback  
 
@@ -122,7 +122,7 @@ this argument is used as the message ID
 # `void` `unpinMessage`
 
 # Arguments
-* `string` (message-reference-url) message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) message  
 this argument is used as the message ID 
 * `function` callback  
 
@@ -130,7 +130,7 @@ this argument is used as the message ID
 # `void` `createDM`
 
 # Arguments
-* `string` `user` message  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) message  
 this argument is used as the user ID 
 * `function` callback  
 
@@ -138,9 +138,9 @@ this argument is used as the user ID
 # `void` `kickMember`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
-* `string` `user` `member` member  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) [member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member) member  
 this argument is used as the member ID 
 * `function` callback  
 
@@ -148,9 +148,9 @@ this argument is used as the member ID
 # `void` `banMember`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
-* `string` `user` `member` member  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) [member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member) member  
 this argument is used as the member ID 
 * `string` reason  
 this argument is optional 
@@ -160,9 +160,9 @@ this argument is optional
 # `void` `unbanMember`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
-* `string` `user` `member` member  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) [member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member) member  
 this argument is used as the member ID 
 * `function` callback  
 
@@ -170,7 +170,7 @@ this argument is used as the member ID
 # `void` `getBanList`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `function` callback  
 
@@ -182,7 +182,7 @@ Description
 ---
 All arguments except guild are optional  
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` name  
 * `permissions` permissions  
@@ -195,7 +195,7 @@ this argument is used as the guild ID
 # `void` `editGuildRole`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` `role` role  
 this argument is used as the role ID 
@@ -210,7 +210,7 @@ this argument is used as the role ID
 # `void` `deleteGuildRole`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` `role` role  
 this argument is used as the role ID 
@@ -220,9 +220,9 @@ this argument is used as the role ID
 # `void` `addMemberRole`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
-* `string` `user` message  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) message  
 this argument is used as the user ID 
 * `string` `role` role  
 this argument is used as the role ID 
@@ -232,9 +232,9 @@ this argument is used as the role ID
 # `void` `removeMemberRole`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
-* `string` `user` message  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) message  
 this argument is used as the user ID 
 * `string` `role` role  
 this argument is used as the role ID 
@@ -244,9 +244,9 @@ this argument is used as the role ID
 # `void` `setMemberNick`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
-* `string` `user` message  
+* `string` [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) message  
 this argument is used as the user ID 
 * `string` nick  
 * `function` callback  
@@ -259,7 +259,7 @@ Description
 ---
 Changes the bot's nickname for this guild  
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` nick  
 * `function` callback  
@@ -268,7 +268,7 @@ this argument is used as the guild ID
 # `void` `setChannelName`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
 * `string` name  
 * `function` callback  
@@ -277,7 +277,7 @@ this argument is used as the channel ID
 # `void` `getInvites`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` nick  
 * `function` callback  
@@ -293,7 +293,7 @@ this argument is used as the guild ID
 # `void` `createWebhook`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
 * `string` name  
 this argument is optional 
@@ -305,7 +305,7 @@ this argument is optional
 # `void` `getChannelWebhooks`
 
 # Arguments
-* `string` `channel` channel  
+* `string` [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channel  
 this argument is used as the channel ID 
 * `function` callback  
 
@@ -358,7 +358,7 @@ this argument is used as the channel ID
 
 # Arguments
 * `command` command  
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `function` callback  
 
@@ -366,7 +366,7 @@ this argument is used as the guild ID
 # `void` `getGuildCommands`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `function` callback  
 
@@ -374,7 +374,7 @@ this argument is used as the guild ID
 # `void` `editGuildCommand`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` command_id  
 * `function` callback  
@@ -383,7 +383,7 @@ this argument is used as the guild ID
 # `void` `deleteGuildCommand`
 
 # Arguments
-* `string` `guild` guild  
+* `string` [guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild) guild  
 this argument is used as the guild ID 
 * `string` command_id  
 * `function` callback  

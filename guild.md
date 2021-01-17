@@ -25,9 +25,9 @@ verification level required for the guild
 roles in the guild  
 * `emojis` emojis  
 custom guild emojis  
-* `members` members  
+* [member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member) members  
 users in the guild  
-* (channel-reference-url) channels  
+* [channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel) channels  
 channels in the guild  
 * `features` features  
 strings enabled guild features  

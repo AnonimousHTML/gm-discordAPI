@@ -3,7 +3,7 @@
 # Properties
 * `string` nick  
 this users guild nickname  
-* `user` user  
+* [user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user) user  
 the user this guild member represents  
 * `string` joined_at  
 ISO8601 timestamp when the user joined the guild  
@@ -13,7 +13,7 @@ ISO8601 timestamp when the user joined the guild
 # `void` `send`
 
 # Arguments
-* `string` (message-reference-url) `embed` message  
+* `string` [message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message) `embed` message  
 * `function` callback  
 
 ---

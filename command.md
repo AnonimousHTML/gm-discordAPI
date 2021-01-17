@@ -1,6 +1,11 @@
 # command
 
 
+Description
+---
+https://discord.com/developers/docs/interactions/slash-commands#a-quick-note-on-limits  
+
+
 ---
 # Methods
 # `void` `setName`

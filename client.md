@@ -2,17 +2,16 @@
 
 # Properties
 * `user` user  
-the user's id  
 
 ---
 # Methods
-# `login`
+# `void` `login`
 
 # Arguments
 * `string` token  
 
 ---
-# `on`
+# `void` `on`
 
 # Arguments
 * `string` eventname  
@@ -20,31 +19,36 @@ the user's id
 * `function` callback  
 
 ---
-# `enableAutoReconnect`
+# `void` `enableAutoReconnect`
 
 
 ---
-# `reconnect`
+# `void` `reconnect`
 
 
 ---
-# `destroy`
+# `void` `destroy`
 
 
 ---
-# `destroy`
-
-
----
-# `sendMessage`
+# `void` `sendMessage`
 
 # Arguments
 * `string` `channel` channel  
-* `string` `message` `embed` message  
+* `string` (message-reference-url) `embed` message  
 * `function` callback  
 
 ---
-# `getMessage`
+# `void` `sendMessageDM`
+
+# Arguments
+* `string` `user` message  
+this argument is used as the user ID 
+* `string` (message-reference-url) `embed` message  
+* `function` callback  
+
+---
+# `void` `getMessage`
 
 # Arguments
 * `string` `channel` channel  
@@ -52,127 +56,118 @@ the user's id
 * `function` callback  
 
 ---
-# `editMessage`
+# `void` `editMessage`
 
 # Arguments
 * `string` `channel` channel  
 this argument is used as the channel ID 
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
-* `string` `message` `embed` editedMessage  
+* `string` (message-reference-url) `embed` editedMessage  
 * `function` callback  
 
 ---
-# `deleteMessage`
+# `void` `deleteMessage`
 
 # Arguments
 * `string` `channel` channel  
 this argument is used as the channel ID 
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
 * `function` callback  
 
 ---
-# `createReaction`
+# `void` `createReaction`
 
 # Arguments
 * `string` `channel` channel  
 this argument is used as the channel ID 
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
-* `string` `reaction` emoji  
+* `string` `reaction ` emoji  
 * `function` callback  
 
 ---
-# `deleteReaction`
+# `void` `deleteReaction`
 
 # Arguments
 * `string` `channel` channel  
 this argument is used as the channel ID 
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
 * `string` `user` message  
 this argument is used as the user ID 
-* `string` `reaction` emoji  
+* `string` `reaction ` emoji  
 * `function` callback  
 
 ---
-# `deleteAllReactions`
+# `void` `deleteAllReactions`
 
 # Arguments
 * `string` `channel` channel  
 this argument is used as the channel ID 
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
 * `function` callback  
 
 ---
-# `pinMessage`
+# `void` `pinMessage`
 
 # Arguments
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
 * `function` callback  
 
 ---
-# `unpinMessage`
+# `void` `unpinMessage`
 
 # Arguments
-* `string` `message` message  
+* `string` (message-reference-url) message  
 this argument is used as the message ID 
 * `function` callback  
 
 ---
-# `createDM`
-
-# Arguments
-* `string` `user` message  
-this argument is used as the user ID 
-* `function` callback  
-
----
-# `sendMessageDM`
+# `void` `createDM`
 
 # Arguments
 * `string` `user` message  
 this argument is used as the user ID 
-* `string` `message` `embed` message  
 * `function` callback  
 
 ---
-# `kickMember`
+# `void` `kickMember`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` `user` user  
+* `string` `user` `member` member  
 this argument is used as the member ID 
 * `function` callback  
 
 ---
-# `banMember`
+# `void` `banMember`
 
 # Arguments
-* `string` `useguildr` guild  
+* `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` `user` user  
+* `string` `user` `member` member  
 this argument is used as the member ID 
 * `string` reason  
 this argument is optional 
 * `function` callback  
 
 ---
-# `unbanMember`
+# `void` `unbanMember`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` `user` user  
+* `string` `user` `member` member  
 this argument is used as the member ID 
 * `function` callback  
 
 ---
-# `getBanList`
+# `void` `getBanList`
 
 # Arguments
 * `string` `guild` guild  
@@ -180,12 +175,12 @@ this argument is used as the guild ID
 * `function` callback  
 
 ---
-# `createGuildRole`
+# `void` `createGuildRole`
+
 
 Description
 ---
-All arguments except guild are optional
-
+All arguments except guild are optional  
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
@@ -197,11 +192,7 @@ this argument is used as the guild ID
 * `function` callback  
 
 ---
-# `editGuildRole`
-
-Description
----
-All arguments except guild are optional
+# `void` `editGuildRole`
 
 # Arguments
 * `string` `guild` guild  
@@ -216,7 +207,7 @@ this argument is used as the role ID
 * `function` callback  
 
 ---
-# `deleteGuildRole`
+# `void` `deleteGuildRole`
 
 # Arguments
 * `string` `guild` guild  
@@ -226,42 +217,42 @@ this argument is used as the role ID
 * `function` callback  
 
 ---
-# `addMemberRole`
+# `void` `addMemberRole`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` `user` user  
-this argument is used as the member ID 
+* `string` `user` message  
+this argument is used as the user ID 
 * `string` `role` role  
 this argument is used as the role ID 
 * `function` callback  
 
 ---
-# `removeMemberRole`
+# `void` `removeMemberRole`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` `user` user  
-this argument is used as the member ID 
+* `string` `user` message  
+this argument is used as the user ID 
 * `string` `role` role  
 this argument is used as the role ID 
 * `function` callback  
 
 ---
-# `setMemberNick`
+# `void` `setMemberNick`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` `user` user  
-this argument is used as the member ID 
+* `string` `user` message  
+this argument is used as the user ID 
 * `string` nick  
 * `function` callback  
 
 ---
-# `setNick`
+# `void` `setNick`
 
 
 Description
@@ -274,7 +265,7 @@ this argument is used as the guild ID
 * `function` callback  
 
 ---
-# `setChannelName`
+# `void` `setChannelName`
 
 # Arguments
 * `string` `channel` channel  
@@ -283,33 +274,35 @@ this argument is used as the channel ID
 * `function` callback  
 
 ---
-# `getInvites`
+# `void` `getInvites`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
+* `string` nick  
 * `function` callback  
 
 ---
-# `deleteInvite`
+# `void` `deleteInvite`
 
 # Arguments
 * `string` invite_code  
 * `function` callback  
 
 ---
-# `createWebhook`
+# `void` `createWebhook`
 
 # Arguments
 * `string` `channel` channel  
 this argument is used as the channel ID 
 * `string` name  
-* `string` avatar  
+this argument is optional 
+* `string` avatarURL  
 this argument is optional 
 * `function` callback  
 
 ---
-# `getChannelWebhooks`
+# `void` `getChannelWebhooks`
 
 # Arguments
 * `string` `channel` channel  
@@ -317,14 +310,14 @@ this argument is used as the channel ID
 * `function` callback  
 
 ---
-# `deleteWebhook`
+# `void` `deleteWebhook`
 
 # Arguments
 * `string` webhook_id  
 * `function` callback  
 
 ---
-# `executeWebhook`
+# `void` `executeWebhook`
 
 # Arguments
 * `string` webhook_id  
@@ -333,41 +326,44 @@ this argument is used as the channel ID
 * `function` callback  
 
 ---
-# `getGlobalCommands`
+# `void` `getGlobalCommands`
 
 # Arguments
 * `function` callback  
 
 ---
-# `createGlobalCommand`
+# `void` `createGlobalCommand`
 
 # Arguments
 * `command` command  
 * `function` callback  
 
 ---
-# `editGlobalCommand`
+# `void` `editGlobalCommand`
 
 # Arguments
 * `command` command  
 * `string` command_id  
 * `function` callback  
+
 ---
-# `deleteGlobalCommand`
+# `void` `deleteGlobalCommand`
 
 # Arguments
 * `string` command_id  
 * `function` callback  
+
 ---
-# `createGuildCommand`
+# `void` `deleteGlobalCommand`
 
 # Arguments
 * `command` command  
 * `string` `guild` guild  
 this argument is used as the guild ID 
 * `function` callback  
+
 ---
-# `getGuildCommands`
+# `void` `getGuildCommands`
 
 # Arguments
 * `string` `guild` guild  
@@ -375,20 +371,21 @@ this argument is used as the guild ID
 * `function` callback  
 
 ---
-# `editGuildCommand`
+# `void` `editGuildCommand`
 
 # Arguments
-* `command` command  
 * `string` `guild` guild  
 this argument is used as the guild ID 
 * `string` command_id  
 * `function` callback  
+
 ---
-# `deleteGuildCommand`
+# `void` `deleteGuildCommand`
 
 # Arguments
 * `string` `guild` guild  
 this argument is used as the guild ID 
-* `string` command_id 
+* `string` command_id  
 * `function` callback  
+
 ---

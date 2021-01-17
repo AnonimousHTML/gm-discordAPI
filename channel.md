@@ -1,10 +1,10 @@
-# channel
+# message
 
 # Properties
 * `string` id  
 the id of this channel  
 * `integer` type  
-the [type of channel](https://discord.com/developers/docs/resources/channel#channel-object-channel-types)  
+the id of this channel  
 * `string` guild_id  
 the id of the guild  
 * `integer` position  
@@ -22,18 +22,18 @@ id of the DM creator
 
 ---
 # Methods
-# `send`
+# `void` `send`
 
 
 Description
 ---
 Send a message to the channel  
 # Arguments
-* `string` `message` `embed` message  
+* `string` (message-reference-url) `embed` message  
 * `function` callback  
 
 ---
-# `setName`
+# `void` `setName`
 
 
 Description

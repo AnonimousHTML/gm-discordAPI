@@ -21,21 +21,21 @@ id of owner
 total permissions for the user in the guild (excludes overrides)  
 * `integer` verification_level  
 verification level required for the guild  
-* `table` roles  
+* `roles` roles  
 roles in the guild  
-* `table` emojis  
+* `emojis` emojis  
 custom guild emojis  
-* `table` members  
+* `members` members  
 users in the guild  
-* `table` channels  
+* (channel-reference-url) channels  
 channels in the guild  
-* `table` features  
-strings	enabled guild features  
+* `features` features  
+strings enabled guild features  
 * `integer` mfa_level  
 required MFA level for the guild  
 * `string` description  
 the description for the guild, if the guild is discoverable  
 * `string` banner  
-	banner hash  
+banner hash  
 
 ---

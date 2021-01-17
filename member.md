@@ -10,25 +10,21 @@ ISO8601 timestamp when the user joined the guild
 
 ---
 # Methods
-# `send`
+# `void` `send`
 
-
-Description
----
-Send a message to the user's dm channel  
 # Arguments
-* `string` `message` `embed` message  
+* `string` (message-reference-url) `embed` message  
 * `function` callback  
 
 ---
-# `setNick`
+# `void` `setNick`
 
 # Arguments
 * `string` nick  
 * `function` callback  
 
 ---
-# `table fetchRoles`
+# `roles` `fetchRoles`
 
 
 Description
@@ -36,27 +32,23 @@ Description
 Returns all roles of the participant  
 
 ---
-# `boolean hasPermission`
+# `boolean` `hasPermission`
 
 # Arguments
 * `integer` permission  
 
 ---
-# `kick`
+# `void` `kick`
 
 # Arguments
 * `function` callback  
 
 ---
-# `ban`
+# `void` `ban`
 
 # Arguments
 * `string` reason  
 optional argument 
 * `function` callback  
-
----
-# `presence getPresence`
-
 
 ---

@@ -18,19 +18,19 @@ whether the user has two factor enabled on their account
 * `string` locale  
 the user's chosen language option  
 * `boolean` verified  
-	whether the email on this account has been verified  
+whether the email on this account has been verified  
 * `string` email  
 the user's email  
 * `integer` flags  
-the [flags](https://discord.com/developers/docs/resources/user#user-object-user-flags) on a user's account  
+the [flags](https://discord.com/developers/docs/resources/user#user-object-user-flags) on a user's account    
 * `integer` premium_type  
-the type of [Nitro subscription](https://discord.com/developers/docs/resources/user#user-object-premium-types) on a user's account  
+the type of [Nitro subscription](https://discord.com/developers/docs/resources/user#user-object-premium-types) on a user's account    
 * `integer` public_flags  
-the public [flags](https://discord.com/developers/docs/resources/user#user-object-user-flags) on a user's account  
+the public [flags](https://discord.com/developers/docs/resources/user#user-object-user-flags) on a user's account    
 
 ---
 # Methods
-# `avatarUrl`
+# `string` `avatarUrl`
 
 # Arguments
 * `integer` size  
@@ -38,14 +38,10 @@ the public [flags](https://discord.com/developers/docs/resources/user#user-objec
 one of jpg,jpeg,png,webp,gif 
 
 ---
-# `send`
+# `void` `send`
 
-
-Description
----
-Send a message to the user's dm channel  
 # Arguments
-* `string` `message` `embed` message  
+* `string` (message-reference-url) `embed` message  
 * `function` callback  
 
 ---

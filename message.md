@@ -47,14 +47,14 @@ the message associated with the message_reference
 # `void` `reply`
 
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** `embed` message  
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
 * `function` callback  
 
 ---
 # `void` `edit`
 
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** `embed` message  
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
 * `function` callback  
 
 ---

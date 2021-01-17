@@ -35,7 +35,7 @@
 
 # Arguments
 * `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** `embed` message  
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
 * `function` callback  
 
 ---
@@ -44,7 +44,7 @@
 # Arguments
 * `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
 this argument is used as the user ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** `embed` message  
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
 * `function` callback  
 
 ---
@@ -63,7 +63,7 @@ this argument is used as the user ID
 this argument is used as the channel ID 
 * `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
 this argument is used as the message ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** `embed` editedMessage  
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** editedMessage  
 * `function` callback  
 
 ---

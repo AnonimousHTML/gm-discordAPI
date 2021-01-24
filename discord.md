@@ -3,7 +3,7 @@
 ---
 # **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** `command()`
 ---
-# `cmessage` `message()`
+# **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** `message()`
 ---
 # **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** `messageEmbed()`
 ---

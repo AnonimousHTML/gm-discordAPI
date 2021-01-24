@@ -1,5 +1,5 @@
 # Methods
-# `client` `client()`
+# **[client](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#client)** `client()`
 ---
 # `string` `escapeMarkdown(str)`
 # Arguments

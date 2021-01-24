@@ -5,23 +5,27 @@
 # Methods
 # `void` `setTitle(title)`
 # Arguments
-* `string` title  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| title  |title  |
 ---
 # `void` `setDescription(description)`
 # Arguments
-* `string` description  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| description  |description  |
 ---
 # `void` `setURL(url)`
 # Arguments
-* `string` url  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| url  |url  |
 ---
 # `void` `setColor(color)`
 # Arguments
-* `color` color  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `color`| color  |color  |
 ---
 # `void` `addField(name, value, inline)`
 Description
@@ -29,22 +33,19 @@ Description
 All arguments are optional  
 
 # Arguments
-* `string` name  
-* `string` value  
-* `boolean` inline  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  || `string`| value  |value  || `boolean`| inline  |inline  |
 ---
 # `void` `setImage(url)`
 # Arguments
-* `string` url  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| url  |url  |
 ---
 # `void` `setAuthor(name, url, icon_url)`
 # Arguments
-* `string` name  
-* `string` url  
-this argument is optional   
-* `string` icon_url  
-this argument is optional   
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  || `string`| url  |this argument is optional  url  || `string`| icon_url  |this argument is optional  icon_url  |
 ---

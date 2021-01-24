@@ -21,14 +21,13 @@
 # Methods
 # `string` `avatarUrl(size, extentsion)`
 # Arguments
-* `integer` size  
-* `string` extentsion  
-one of jpg,jpeg,png,webp,gif  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `integer`| size  |size  || `string`| extentsion  |one of jpg,jpeg,png,webp,gif extentsion  |
 ---
 # `void` `send(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)**| **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)**| **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**| message  |message  || `function`| callback  |callback  |
 ---

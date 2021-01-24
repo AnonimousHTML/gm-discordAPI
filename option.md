@@ -5,33 +5,37 @@
 # Methods
 # `void` `setName(name)`
 # Arguments
-* `string` name  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  |
 ---
 # `void` `setType(type)`
 # Arguments
-* `integer` type  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `integer`| type  |type  |
 ---
 # `void` `setDescription(description)`
 # Arguments
-* `string` description  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| description  |description  |
 ---
 # `void` `setDefault(default)`
 # Arguments
-* `boolean` default  
-the first required option for the user to complete(only one option can be default)   
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `boolean`| default  |the first required option for the user to complete(only one option can be default)  default  |
 ---
 # `void` `setRequired(required)`
 # Arguments
-* `boolean` required  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `boolean`| required  |required  |
 ---
 # `void` `addChoice(name, value)`
 # Arguments
-* `string` name  
-* `string` value  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  || `string`| value  |value  |
 ---

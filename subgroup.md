@@ -5,16 +5,19 @@
 # Methods
 # `void` `setName(name)`
 # Arguments
-* `string` name  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  |
 ---
 # `void` `setDescription(description)`
 # Arguments
-* `string` description  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| description  |description  |
 ---
 # `void` `addCommand(command)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)**| command  |command  |
 ---

@@ -5,28 +5,31 @@
 # Methods
 # `void` `setStatus(status)`
 # Arguments
-* `string` status  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| status  |status  |
 ---
 # `void` `setGame(name)`
 # Arguments
-* `string` name  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  |
 ---
 # `void` `setCompeting(name)`
 # Arguments
-* `string` name  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  |
 ---
 # `void` `setStreaming(details, url)`
 # Arguments
-* `string` details  
-* `string` url  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| details  |details  || `string`| url  |url  |
 ---
 # `void` `setListening(name, url)`
 # Arguments
-* `string` name  
-* `string` url  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  || `string`| url  |url  |
 ---

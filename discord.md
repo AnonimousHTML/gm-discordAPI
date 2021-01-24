@@ -21,13 +21,13 @@
 ---
 # `string` `escapeMarkdown(str)`
 # Arguments
-* `string` str  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| str  |str  |
 ---
 # `string` `codeBlock(str, lang)`
 # Arguments
-* `string` str  
-* `string` lang  
-this argument is optional   
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| str  |str  || `string`| lang  |this argument is optional  lang  |
 ---

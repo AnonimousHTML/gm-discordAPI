@@ -21,9 +21,9 @@ Description
 Send a message to the channel  
 
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)**| **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)**| **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**| message  |message  || `function`| callback  |callback  |
 ---
 # `void` `setName(name, callback)`
 Description
@@ -31,7 +31,7 @@ Description
 Set the channel name  
 
 # Arguments
-* `string` name  
-* `function` callback  
-
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string`| name  |name  || `function`| callback  |callback  |
 ---

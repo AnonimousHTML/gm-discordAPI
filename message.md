@@ -44,42 +44,27 @@ the message associated with the message_reference
 
 ---
 # Methods
-# `void` `reply`
-
+# `void` `reply(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `edit`
-
+# `void` `edit(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `delete`
-
+# `void` `delete(callback)`
 # Arguments
-* `function` callback  
-
+* `function` 
 ---
-# `void` `pin`
-
+# `void` `pin(callback)`
 # Arguments
-* `function` callback  
-
+* `function` 
 ---
-# `void` `unpin`
-
+# `void` `unpin(callback)`
 # Arguments
-* `function` callback  
-
+* `function` 
 ---
-# `void` `react`
-
+# `void` `react(emoji, callback)`
 # Arguments
-* `string` `reaction` emoji  
-* `function` callback  
-
+* `string` `reaction` * `function` 
 ---

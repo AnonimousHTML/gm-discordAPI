@@ -1,19 +1,12 @@
 # Methods
-# `client` `client`
-
-
+# `client` `client()`
 ---
-# `string` `escapeMarkdown`
-
+# `string` `escapeMarkdown(str)`
 # Arguments
-* `string` str  
-
+* `string` 
 ---
-# `string` `codeBlock`
-
+# `string` `codeBlock(str, lank)`
 # Arguments
-* `string` str  
-* `string` lank  
-this argument is optional  
+* `string` * `string` this argument is optional  
 
 ---

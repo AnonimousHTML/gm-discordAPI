@@ -10,45 +10,30 @@ ISO8601 timestamp when the user joined the guild
 
 ---
 # Methods
-# `void` `send`
-
+# `void` `send(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `setNick`
-
+# `void` `setNick(nick, callback)`
 # Arguments
-* `string` nick  
-* `function` callback  
-
+* `string` * `function` 
 ---
-# `roles` `fetchRoles`
-
-
+# `roles` `fetchRoles()`
 Description
 ---
 Returns all roles of the participant  
 
 ---
-# `boolean` `hasPermission`
-
+# `boolean` `hasPermission(permission)`
 # Arguments
-* `integer` permission  
-
+* `integer` 
 ---
-# `void` `kick`
-
+# `void` `kick(callback)`
 # Arguments
-* `function` callback  
-
+* `function` 
 ---
-# `void` `ban`
-
+# `void` `ban(reason, callback)`
 # Arguments
-* `string` reason  
-optional argument 
-* `function` callback  
-
+* `string` optional argument 
+* `function` 
 ---

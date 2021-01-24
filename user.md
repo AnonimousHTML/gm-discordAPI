@@ -30,18 +30,12 @@ the public [flags](https://discord.com/developers/docs/resources/user#user-objec
 
 ---
 # Methods
-# `string` `avatarUrl`
-
+# `string` `avatarUrl(size, extentsion)`
 # Arguments
-* `integer` size  
-* `string` extentsion  
-one of jpg,jpeg,png,webp,gif 
+* `integer` * `string` one of jpg,jpeg,png,webp,gif 
 
 ---
-# `void` `send`
-
+# `void` `send(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---

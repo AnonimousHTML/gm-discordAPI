@@ -3,21 +3,15 @@
 
 ---
 # Methods
-# `void` `setName`
-
+# `void` `setName(name)`
 # Arguments
-* `string` name  
-
+* `string` 
 ---
-# `void` `setDescription`
-
+# `void` `setDescription(description)`
 # Arguments
-* `string` description  
-
+* `string` 
 ---
-# `void` `addCommand`
-
+# `void` `addCommand(command)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
-
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** 
 ---

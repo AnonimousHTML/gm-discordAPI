@@ -3,22 +3,15 @@
 
 ---
 # Methods
-# `void` `setText`
-
+# `void` `setText(text)`
 # Arguments
-* `string` text  
-
+* `string` 
 ---
-# `void` `setEmbed`
-
+# `void` `setEmbed(embed)`
 # Arguments
-* **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** embed  
-
+* **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** 
 ---
-# `void` `setMessageReference`
-
+# `void` `setMessageReference(guild_id, message_id)`
 # Arguments
-* `string` guild_id  
-* `string` message_id  
-
+* `string` * `string` 
 ---

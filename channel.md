@@ -22,25 +22,19 @@ id of the DM creator
 
 ---
 # Methods
-# `void` `send`
-
-
+# `void` `send(message, callback)`
 Description
 ---
 Send a message to the channel  
+
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `setName`
-
-
+# `void` `setName(name, callback)`
 Description
 ---
 Set the channel name  
-# Arguments
-* `string` name  
-* `function` callback  
 
+# Arguments
+* `string` * `function` 
 ---

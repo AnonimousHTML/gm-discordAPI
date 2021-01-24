@@ -3,41 +3,28 @@
 
 ---
 # Methods
-# `void` `setName`
-
+# `void` `setName(name)`
 # Arguments
-* `string` name  
+* `string` 
+---
+# `void` `setType(type)`
+# Arguments
+* `integer` 
+---
+# `void` `setDescription(description)`
+# Arguments
+* `string` 
+---
+# `void` `setDefault(default)`
+# Arguments
+* `boolean` the first required option for the user to complete(only one option can be default)  
 
 ---
-# `void` `setType`
-
+# `void` `setRequired(required)`
 # Arguments
-* `integer` type  
-
+* `boolean` 
 ---
-# `void` `setDescription`
-
+# `void` `addChoice(name, value)`
 # Arguments
-* `string` description  
-
----
-# `void` `setDefault`
-
-# Arguments
-* `boolean` default  
-the first required option for the user to complete(only one option can be default)  
-
----
-# `void` `setRequired`
-
-# Arguments
-* `boolean` required  
-
----
-# `void` `addChoice`
-
-# Arguments
-* `string` name  
-* `string` value  
-
+* `string` * `string` 
 ---

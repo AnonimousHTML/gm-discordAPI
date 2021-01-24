@@ -3,55 +3,37 @@
 
 ---
 # Methods
-# `void` `setTitle`
-
+# `void` `setTitle(title)`
 # Arguments
-* `string` title  
-
+* `string` 
 ---
-# `void` `setDescription`
-
+# `void` `setDescription(description)`
 # Arguments
-* `string` description  
-
+* `string` 
 ---
-# `void` `setURL`
-
+# `void` `setURL(url)`
 # Arguments
-* `string` url  
-
+* `string` 
 ---
-# `void` `setColor`
-
+# `void` `setColor(color)`
 # Arguments
-* `color` color  
-
+* `color` 
 ---
-# `void` `addField`
-
-
+# `void` `addField(name, value, inline)`
 Description
 ---
 All arguments are optional  
-# Arguments
-* `string` name  
-* `string` value  
-* `boolean` inline  
 
+# Arguments
+* `string` * `string` * `boolean` 
 ---
-# `void` `setImage`
-
+# `void` `setImage(url)`
 # Arguments
-* `string` url  
-
+* `string` 
 ---
-# `void` `setAuthor`
-
+# `void` `setAuthor(name, url, icon_url)`
 # Arguments
-* `string` name  
-* `string` url  
-this argument is optional  
-* `string` icon_url  
-this argument is optional  
+* `string` * `string` this argument is optional  
+* `string` this argument is optional  
 
 ---

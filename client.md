@@ -5,387 +5,220 @@
 
 ---
 # Methods
-# `void` `login`
-
+# `void` `login(token)`
 # Arguments
-* `string` token  
-
+* `string` 
 ---
-# `void` `on`
-
+# `void` `on(eventname, uid, callback)`
 # Arguments
-* `string` eventname  
-* `string` uid  
-* `function` callback  
-
+* `string` * `string` * `function` 
 ---
-# `void` `enableAutoReconnect`
-
-
+# `void` `enableAutoReconnect()`
 ---
-# `void` `reconnect`
-
-
+# `void` `reconnect()`
 ---
-# `void` `destroy`
-
-
+# `void` `destroy()`
 ---
-# `void` `sendMessage`
-
+# `void` `sendMessage(channel, message, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** * `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `sendMessageDM`
-
+# `void` `sendMessageDM(message, message, callback)`
 # Arguments
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
-this argument is used as the user ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
-* `function` callback  
-
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** this argument is used as the user ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `getMessage`
-
+# `void` `getMessage(channel, message_id, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-* `string` message_id  
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** * `string` * `function` 
 ---
-# `void` `editMessage`
-
+# `void` `editMessage(channel, message, editedMessage, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** editedMessage  
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** * `function` 
 ---
-# `void` `deleteMessage`
-
+# `void` `deleteMessage(channel, message, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `function` 
 ---
-# `void` `createReaction`
-
+# `void` `createReaction(channel, message, emoji, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `string` `reaction ` emoji  
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `string` `reaction ` * `function` 
 ---
-# `void` `deleteReaction`
-
+# `void` `deleteReaction(channel, message, message, emoji, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
-this argument is used as the user ID 
-* `string` `reaction ` emoji  
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** this argument is used as the user ID 
+* `string` `reaction ` * `function` 
 ---
-# `void` `deleteAllReactions`
-
+# `void` `deleteAllReactions(channel, message, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `function` 
 ---
-# `void` `pinMessage`
-
+# `void` `pinMessage(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `function` 
 ---
-# `void` `unpinMessage`
-
+# `void` `unpinMessage(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** message  
-this argument is used as the message ID 
-* `function` callback  
-
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** this argument is used as the message ID 
+* `function` 
 ---
-# `void` `createDM`
-
+# `void` `createDM(message, callback)`
 # Arguments
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
-this argument is used as the user ID 
-* `function` callback  
-
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** this argument is used as the user ID 
+* `function` 
 ---
-# `void` `kickMember`
-
+# `void` `kickMember(guild, member, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** **[member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member)** member  
-this argument is used as the member ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** **[member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member)** this argument is used as the member ID 
+* `function` 
 ---
-# `void` `banMember`
-
+# `void` `banMember(guild, member, reason, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** **[member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member)** member  
-this argument is used as the member ID 
-* `string` reason  
-this argument is optional 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** **[member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member)** this argument is used as the member ID 
+* `string` this argument is optional 
+* `function` 
 ---
-# `void` `unbanMember`
-
+# `void` `unbanMember(guild, member, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** **[member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member)** member  
-this argument is used as the member ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** **[member](https://github.com/devonium/gm-discordAPI/blob/doc/member.md#member)** this argument is used as the member ID 
+* `function` 
 ---
-# `void` `getBanList`
-
+# `void` `getBanList(guild, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `function` 
 ---
-# `void` `createGuildRole`
-
-
+# `void` `createGuildRole(guild, name, permissions, color, hoist, mentionable, callback)`
 Description
 ---
 All arguments except guild are optional  
-# Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` name  
-* `permissions` permissions  
-* `color` color  
-* `boolean` hoist  
-* `boolean` mentionable  
-* `function` callback  
-
----
-# `void` `editGuildRole`
 
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` `role` role  
-this argument is used as the role ID 
-* `string` name  
-* `permissions` permissions  
-* `color` color  
-* `boolean` hoist  
-* `boolean` mentionable  
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` * `permissions` * `color` * `boolean` * `boolean` * `function` 
 ---
-# `void` `deleteGuildRole`
-
+# `void` `editGuildRole(guild, role, name, permissions, color, hoist, mentionable, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` `role` role  
-this argument is used as the role ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` `role` this argument is used as the role ID 
+* `string` * `permissions` * `color` * `boolean` * `boolean` * `function` 
 ---
-# `void` `addMemberRole`
-
+# `void` `deleteGuildRole(guild, role, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
-this argument is used as the user ID 
-* `string` `role` role  
-this argument is used as the role ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` `role` this argument is used as the role ID 
+* `function` 
 ---
-# `void` `removeMemberRole`
-
+# `void` `addMemberRole(guild, message, role, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
-this argument is used as the user ID 
-* `string` `role` role  
-this argument is used as the role ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** this argument is used as the user ID 
+* `string` `role` this argument is used as the role ID 
+* `function` 
 ---
-# `void` `setMemberNick`
-
+# `void` `removeMemberRole(guild, message, role, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** message  
-this argument is used as the user ID 
-* `string` nick  
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** this argument is used as the user ID 
+* `string` `role` this argument is used as the role ID 
+* `function` 
 ---
-# `void` `setNick`
-
-
+# `void` `setMemberNick(guild, message, nick, callback)`
+# Arguments
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** this argument is used as the user ID 
+* `string` * `function` 
+---
+# `void` `setNick(guild, nick, callback)`
 Description
 ---
 Changes the bot's nickname for this guild  
-# Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` nick  
-* `function` callback  
 
+# Arguments
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` * `function` 
 ---
-# `void` `setChannelName`
-
+# `void` `setChannelName(channel, name, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` name  
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` * `function` 
 ---
-# `void` `getInvites`
-
+# `void` `getInvites(guild, nick, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` nick  
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` * `function` 
 ---
-# `void` `deleteInvite`
-
+# `void` `deleteInvite(invite_code, callback)`
 # Arguments
-* `string` invite_code  
-* `function` callback  
-
+* `string` * `function` 
 ---
-# `void` `createWebhook`
-
+# `void` `createWebhook(channel, name, avatarURL, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `string` name  
-this argument is optional 
-* `string` avatarURL  
-this argument is optional 
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `string` this argument is optional 
+* `string` this argument is optional 
+* `function` 
 ---
-# `void` `getChannelWebhooks`
-
+# `void` `getChannelWebhooks(channel, callback)`
 # Arguments
-* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** channel  
-this argument is used as the channel ID 
-* `function` callback  
-
+* `string` **[channel](https://github.com/devonium/gm-discordAPI/blob/doc/channel.md#channel)** this argument is used as the channel ID 
+* `function` 
 ---
-# `void` `deleteWebhook`
-
+# `void` `deleteWebhook(webhook_id, callback)`
 # Arguments
-* `string` webhook_id  
-* `function` callback  
-
+* `string` * `function` 
 ---
-# `void` `executeWebhook`
-
+# `void` `executeWebhook(webhook_id, webhook_token, message, callback)`
 # Arguments
-* `string` webhook_id  
-* `string` webhook_token  
-* `whmessage` message  
-* `function` callback  
-
+* `string` * `string` * `whmessage` * `function` 
 ---
-# `void` `getGlobalCommands`
-
+# `void` `getGlobalCommands(callback)`
 # Arguments
-* `function` callback  
-
+* `function` 
 ---
-# `void` `createGlobalCommand`
-
+# `void` `createGlobalCommand(command, callback)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
-* `function` callback  
-
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** * `function` 
 ---
-# `void` `editGlobalCommand`
-
+# `void` `editGlobalCommand(command, command_id, callback)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
-* `string` command_id  
-* `function` callback  
-
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** * `string` * `function` 
 ---
-# `void` `deleteGlobalCommand`
-
+# `void` `deleteGlobalCommand(command_id, callback)`
 # Arguments
-* `string` command_id  
-* `function` callback  
-
+* `string` * `function` 
 ---
-# `void` `deleteGlobalCommand`
-
+# `void` `deleteGlobalCommand(command, guild, callback)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `function` callback  
-
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** * `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `function` 
 ---
-# `void` `getGuildCommands`
-
+# `void` `getGuildCommands(guild, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `function` 
 ---
-# `void` `editGuildCommand`
-
+# `void` `editGuildCommand(guild, command_id, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` command_id  
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` * `function` 
 ---
-# `void` `deleteGuildCommand`
-
+# `void` `deleteGuildCommand(guild, command_id, callback)`
 # Arguments
-* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
-this argument is used as the guild ID 
-* `string` command_id  
-* `function` callback  
-
+* `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** this argument is used as the guild ID 
+* `string` * `function` 
 ---

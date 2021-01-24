@@ -10,39 +10,27 @@ Description
 
 ---
 # Methods
-# `void` `setName`
-
+# `void` `setName(name)`
 # Arguments
-* `string` name  
-
+* `string` 
 ---
-# `void` `setType`
-
+# `void` `setType(type)`
 # Arguments
-* `integer` type  
-
+* `integer` 
 ---
-# `void` `setDescription`
-
+# `void` `setDescription(description)`
 # Arguments
-* `string` description  
-
+* `string` 
 ---
-# `void` `addOption`
-
+# `void` `addOption(option)`
 # Arguments
-* **[option](https://github.com/devonium/gm-discordAPI/blob/doc/option.md#option)** option  
-
+* **[option](https://github.com/devonium/gm-discordAPI/blob/doc/option.md#option)** 
 ---
-# `void` `addSubCommand`
-
+# `void` `addSubCommand(command)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
-
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** 
 ---
-# `void` `addSubGroup`
-
+# `void` `addSubGroup(subgroup)`
 # Arguments
-* **[subgroup](https://github.com/devonium/gm-discordAPI/blob/doc/subgroup.md#subgroup)** subgroup  
-
+* **[subgroup](https://github.com/devonium/gm-discordAPI/blob/doc/subgroup.md#subgroup)** 
 ---

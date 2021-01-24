@@ -5,7 +5,7 @@
 
 ---
 # Methods
-# ``` void login(token) ```
+# `void` `login(token)`
 # Arguments
 * `string` token  
 

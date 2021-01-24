@@ -7,6 +7,17 @@
 
 ---
 # Methods
+# `void` `user.setPresence(presence)`
+# Arguments
+* `presence` presence  
+
+---
+# `void` `user.setStatus(status)`
+# Arguments
+* `integer` status  
+Online, Idle, DND, Invisible  
+
+---
 # `void` `login(token)`
 # Arguments
 * `string` token  

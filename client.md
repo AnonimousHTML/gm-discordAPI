@@ -1,7 +1,9 @@
 # client
 
 # Properties
-* **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** user  
+| type  | parameter | description |
+| ----  | --------- | ----------- |
+| **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** | user | |
 
 ---
 # Methods

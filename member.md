@@ -1,12 +1,11 @@
 # member
 
 # Properties
-* `string` nick  
-this users guild nickname  
-* **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** user  
-the user this guild member represents  
-* `string` joined_at  
-ISO8601 timestamp when the user joined the guild  
+| type  | parameter | description |
+| ----  | --------- | ----------- |
+| `string` | nick | this users guild nickname|
+| **[user](https://github.com/devonium/gm-discordAPI/blob/doc/user.md#user)** | user | the user this guild member represents|
+| `string` | joined_at | ISO8601 timestamp when the user joined the guild|
 
 ---
 # Methods

@@ -15,7 +15,7 @@
 ---
 # **[option](https://github.com/devonium/gm-discordAPI/blob/doc/option.md#option)** `option()`
 ---
-# `permissions` `permissions()`
+# **[permissions](https://github.com/devonium/gm-discordAPI/blob/doc/permissions.md)** `permissions()`
 ---
 # `presence` `presence()`
 ---

@@ -174,7 +174,7 @@ All arguments except guild are optional
 * `string` **[guild](https://github.com/devonium/gm-discordAPI/blob/doc/guild.md#guild)** guild  
 this argument is used as the guild ID  
 * `string` name  
-* `permissions` permissions  
+* **[permissions](https://github.com/devonium/gm-discordAPI/blob/doc/permissions.md)** permissions  
 * `color` color  
 * `boolean` hoist  
 * `boolean` mentionable  
@@ -188,7 +188,7 @@ this argument is used as the guild ID
 * `string` `role` role  
 this argument is used as the role ID  
 * `string` name  
-* `permissions` permissions  
+* **[permissions](https://github.com/devonium/gm-discordAPI/blob/doc/permissions.md)** permissions  
 * `color` color  
 * `boolean` hoist  
 * `boolean` mentionable  

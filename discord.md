@@ -1,3 +1,7 @@
+# discord
+
+
+---
 # Methods
 # **[client](https://github.com/devonium/gm-discordAPI/blob/doc/client.md#client)** `client()`
 ---

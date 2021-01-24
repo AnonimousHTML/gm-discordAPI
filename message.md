@@ -30,35 +30,44 @@
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string`| **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)**| **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**| message  |message  || `function`| callback  |callback  |
+| `string`| **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)**| **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**| message  |message  |
+| `function`| callback  |callback  |
+
 ---
 # `void` `edit(message, callback)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string`| **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)**| **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**| message  |message  || `function`| callback  |callback  |
+| `string`| **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)**| **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**| message  |message  |
+| `function`| callback  |callback  |
+
 ---
 # `void` `delete(callback)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
 | `function`| callback  |callback  |
+
 ---
 # `void` `pin(callback)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
 | `function`| callback  |callback  |
+
 ---
 # `void` `unpin(callback)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
 | `function`| callback  |callback  |
+
 ---
 # `void` `react(emoji, callback)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string`| `reaction`| emoji  |emoji  || `function`| callback  |callback  |
+| `string`| `reaction`| emoji  |emoji  |
+| `function`| callback  |callback  |
+
 ---

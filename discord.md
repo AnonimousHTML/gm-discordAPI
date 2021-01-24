@@ -24,10 +24,13 @@
 | type  | name | description |
 | ----  | ---- | ----------- |
 | `string`| str  |str  |
+
 ---
 # `string` `codeBlock(str, lang)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string`| str  |str  || `string`| lang  |this argument is optional  lang  |
+| `string`| str  |str  |
+| `string`| lang  |this argument is optional  lang  |
+
 ---

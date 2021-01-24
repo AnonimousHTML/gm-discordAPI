@@ -12,31 +12,31 @@ Description
 # Methods
 # `void` `setName(name)`
 # Arguments
-* `string`   
+* `string` name  
 
 ---
 # `void` `setType(type)`
 # Arguments
-* `integer`   
+* `integer` type  
 
 ---
 # `void` `setDescription(description)`
 # Arguments
-* `string`   
+* `string` description  
 
 ---
 # `void` `addOption(option)`
 # Arguments
-* **[option](https://github.com/devonium/gm-discordAPI/blob/doc/option.md#option)**   
+* **[option](https://github.com/devonium/gm-discordAPI/blob/doc/option.md#option)** option  
 
 ---
 # `void` `addSubCommand(command)`
 # Arguments
-* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)**   
+* **[command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md#command)** command  
 
 ---
 # `void` `addSubGroup(subgroup)`
 # Arguments
-* **[subgroup](https://github.com/devonium/gm-discordAPI/blob/doc/subgroup.md#subgroup)**   
+* **[subgroup](https://github.com/devonium/gm-discordAPI/blob/doc/subgroup.md#subgroup)** subgroup  
 
 ---

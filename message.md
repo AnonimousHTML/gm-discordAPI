@@ -46,34 +46,34 @@ the message associated with the message_reference
 # Methods
 # `void` `reply(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**   
-* `function`   
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
+* `function` callback  
 
 ---
 # `void` `edit(message, callback)`
 # Arguments
-* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)**   
-* `function`   
+* `string` **[message](https://github.com/devonium/gm-discordAPI/blob/doc/message.md#message)** **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** message  
+* `function` callback  
 
 ---
 # `void` `delete(callback)`
 # Arguments
-* `function`   
+* `function` callback  
 
 ---
 # `void` `pin(callback)`
 # Arguments
-* `function`   
+* `function` callback  
 
 ---
 # `void` `unpin(callback)`
 # Arguments
-* `function`   
+* `function` callback  
 
 ---
 # `void` `react(emoji, callback)`
 # Arguments
-* `string` `reaction`   
-* `function`   
+* `string` `reaction` emoji  
+* `function` callback  
 
 ---

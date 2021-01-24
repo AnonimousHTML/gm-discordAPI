@@ -3,13 +3,13 @@
 ---
 # `string` `escapeMarkdown(str)`
 # Arguments
-* `string`   
+* `string` str  
 
 ---
 # `string` `codeBlock(str, lank)`
 # Arguments
-* `string`   
-* `string` this argument is optional   
-  
+* `string` str  
+* `string` lank  
+this argument is optional   
 
 ---

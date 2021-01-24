@@ -5,33 +5,26 @@
 # Methods
 # `void` `setName(name)`
 # Arguments
-* `string` 
-
+* `string`  
 ---
 # `void` `setType(type)`
 # Arguments
-* `integer` 
-
+* `integer`  
 ---
 # `void` `setDescription(description)`
 # Arguments
-* `string` 
-
+* `string`  
 ---
 # `void` `setDefault(default)`
 # Arguments
-* `boolean` the first required option for the user to complete(only one option can be default)  
-
+* `boolean`  the first required option for the user to complete(only one option can be default)   
 
 ---
 # `void` `setRequired(required)`
 # Arguments
-* `boolean` 
-
+* `boolean`  
 ---
 # `void` `addChoice(name, value)`
 # Arguments
-* `string` 
-* `string` 
-
+* `string`  * `string`  
 ---

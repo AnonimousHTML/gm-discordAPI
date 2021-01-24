@@ -5,23 +5,19 @@
 # Methods
 # `void` `setTitle(title)`
 # Arguments
-* `string` 
-
+* `string`  
 ---
 # `void` `setDescription(description)`
 # Arguments
-* `string` 
-
+* `string`  
 ---
 # `void` `setURL(url)`
 # Arguments
-* `string` 
-
+* `string`  
 ---
 # `void` `setColor(color)`
 # Arguments
-* `color` 
-
+* `color`  
 ---
 # `void` `addField(name, value, inline)`
 Description
@@ -29,22 +25,15 @@ Description
 All arguments are optional  
 
 # Arguments
-* `string` 
-* `string` 
-* `boolean` 
-
+* `string`  * `string`  * `boolean`  
 ---
 # `void` `setImage(url)`
 # Arguments
-* `string` 
-
+* `string`  
 ---
 # `void` `setAuthor(name, url, icon_url)`
 # Arguments
-* `string` 
-* `string` this argument is optional  
-
-* `string` this argument is optional  
-
+* `string`  * `string`  this argument is optional   
+* `string`  this argument is optional   
 
 ---

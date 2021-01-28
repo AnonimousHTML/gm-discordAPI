@@ -21,3 +21,7 @@ local band = bit.band
 function discord.hasPermission(bits, permission)
     return (band(bits, discord.enums.permissions.ADMINISTRATOR) == discord.enums.permissions.ADMINISTRATOR) or (band(bits, permission) == permission)
 end
+
+function discord.timestamp(time)
+    return os.date("!%Y-%m-%dT%H:%M:%S+00:00")
+end

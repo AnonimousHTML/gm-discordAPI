@@ -25,8 +25,8 @@ function discord.messageEmbed(embed)
         return embed
     end
 
-    function embed.setTimestamp(timestamp)
-        embed.timestamp = timestamp or ""
+    function embed.setTimestamp(time)
+        embed.timestamp = discord.timestamp(time)
 
         return embed
     end

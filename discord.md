@@ -34,3 +34,10 @@
 | `string` | lang  |this argument is optional  lang  |
 
 ---
+# `string` `timestamp(time)`
+# Arguments
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `integer` | time  |this argument is optional  time  |
+
+---

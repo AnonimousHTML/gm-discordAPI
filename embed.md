@@ -60,3 +60,10 @@ All arguments are optional
 | `string` | icon_url  |this argument is optional  icon_url  |
 
 ---
+# `void` `setTimestamp(time)`
+# Arguments
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `integer` | time  |this argument is optional  time  |
+
+---

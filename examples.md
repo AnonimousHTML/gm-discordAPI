@@ -197,5 +197,13 @@ discordClient.on("ready","chatRelay",function()
     )
 
     discordClient.createGuildCommand(exampleCommand, guildID)
+
+    discordClient.on("interactionCreate", "responseExample", function(interaction)
+        local data = interaction.data
+        if data.name == "example"
+        then
+            interaction.response(discord.enums.response_type.AcknowledgeWithSource)
+        end
+    end)
 end)
 ```

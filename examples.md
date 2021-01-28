@@ -129,7 +129,7 @@ discordClient = discord.client()
 discordClient.enableAutoReconnect()
 discordClient.login(token)
 
-discordClient.on("ready","chatRelay",function()
+discordClient.on("ready","commandCreationExample",function()
     local exampleCommand = discord.command()
 
     exampleCommand.setName("example")

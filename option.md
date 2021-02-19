@@ -7,42 +7,42 @@
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | name  |name  |
+| `string` | name  |  |
 
 ---
 # `void` `setType(type)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `integer` | type  |type  |
+| `integer` | type  |  |
 
 ---
 # `void` `setDescription(description)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | description  |description  |
+| `string` | description  |  |
 
 ---
 # `void` `setDefault(default)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `boolean` | default  |the first required option for the user to complete(only one option can be default)  default  |
+| `boolean` | default  |the first required option for the user to complete(only one option can be default)    |
 
 ---
 # `void` `setRequired(required)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `boolean` | required  |required  |
+| `boolean` | required  |  |
 
 ---
 # `void` `addChoice(name, value)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | name  |name  |
-| `string` | value  |value  |
+| `string` | name  |  |
+| `string` | value  |  |
 
 ---

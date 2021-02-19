@@ -23,21 +23,21 @@
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | str  |str  |
+| `string` | str  |  |
 
 ---
 # `string` `codeBlock(str, lang)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | str  |str  |
-| `string` | lang  |this argument is optional  lang  |
+| `string` | str  |  |
+| `string` | lang  |this argument is optional    |
 
 ---
 # `string` `timestamp(time)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `integer` | time  |this argument is optional  time  |
+| `integer` | time  |this argument is optional    |
 
 ---

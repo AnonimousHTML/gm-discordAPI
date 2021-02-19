@@ -7,36 +7,36 @@
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | status  |status  |
+| `string` | status  |  |
 
 ---
 # `void` `setGame(name)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | name  |name  |
+| `string` | name  |  |
 
 ---
 # `void` `setCompeting(name)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | name  |name  |
+| `string` | name  |  |
 
 ---
 # `void` `setStreaming(details, url)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | details  |details  |
-| `string` | url  |url  |
+| `string` | details  |  |
+| `string` | url  |  |
 
 ---
 # `void` `setListening(name, url)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | name  |name  |
-| `string` | url  |url  |
+| `string` | name  |  |
+| `string` | url  |  |
 
 ---

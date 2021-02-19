@@ -28,11 +28,11 @@
 | `string` | token  |  |
 
 ---
-# `void` `on(eventname, uid, callback)`
+# `void` `on([eventname](https://github.com/devonium/gm-discordAPI/blob/doc/events.md), uid, callback)`
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `string` | eventname  |  |
+| `string` | [eventname](https://github.com/devonium/gm-discordAPI/blob/doc/events.md)  |  |
 | `string` | uid  |  |
 | `function` | callback  |  |
 

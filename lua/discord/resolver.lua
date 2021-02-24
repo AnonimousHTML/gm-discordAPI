@@ -13,6 +13,19 @@ function discord.resolver.message(obj)
     return discord.message().setText(tostring(obj))
 end
 
+function discord.resolver.whmessage(obj)
+    if istable(obj) then
+        if obj._type == "embed"
+        then
+            return discord.whmessage().addEmbed(obj)
+        end
+
+        return obj
+    end
+
+    return discord.whmessage().setText(tostring(obj))
+end
+
 function discord.resolver.messageID(obj)
     if istable(obj) and obj._type == "message" then
         return obj.id

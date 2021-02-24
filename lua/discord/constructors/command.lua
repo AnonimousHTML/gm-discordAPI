@@ -61,6 +61,7 @@ end
 function discord.option()
     local option = {
         description = "​",
+        type = discord.enums.command_option_type.STRING
     }
 
     function option.setType(type)

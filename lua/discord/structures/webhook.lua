@@ -3,8 +3,8 @@ function discord.structures.webhook(client, webhook)
         client.deleteWebhook(webhook.id, callback)
     end
 
-    function webhook.execute(params, callback)
-        client.executeWebhook(webhook.id, webhook.token, params, callback)
+    function webhook.execute(msg, callback)
+        client.executeWebhook(webhook.id, webhook.token, msg, callback)
     end
 
     webhook._type = "webhook"

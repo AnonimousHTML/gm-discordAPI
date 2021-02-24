@@ -25,3 +25,19 @@ end
 function discord.timestamp(time)
     return os.date("!%Y-%m-%dT%H:%M:%S+00:00")
 end
+
+function discord.hyperlink(url, linktext)
+    return "[" .. linktext .. "](" .. url .. ")"
+end
+
+function discord.mentionRole(id)
+    return "<@&" .. discord.resolver.roleID(id) .. ">"
+end
+
+function discord.mentionUser(id)
+    return "<@" .. discord.resolver.userID(id) .. ">"
+end
+
+function discord.mentionChannel(id)
+    return "<#" .. discord.resolver.channelID(id) .. ">"
+end

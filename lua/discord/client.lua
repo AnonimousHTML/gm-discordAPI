@@ -671,8 +671,8 @@ function discord.client()
         end, false)
     end
 
-    function client.executeWebhook(webhook_id, webhook_token, params, callback)
-        client.HTTPRequest("webhooks/" .. webhook_id .. "/" .. webhook_token, "POST", params, callback and function(code, data, headers)
+    function client.executeWebhook(webhook_id, webhook_token, msg, callback)
+        client.HTTPRequest("webhooks/" .. webhook_id .. "/" .. webhook_token, "POST", discord.resolver.whmessage(msg), callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end, 3)
     end

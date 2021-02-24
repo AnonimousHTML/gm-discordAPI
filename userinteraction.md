@@ -19,3 +19,18 @@
 | `function` | callback  |  |
 
 ---
+# `void` `editResponse(msg, callback)`
+# Arguments
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `string` **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** **[whmessagec](https://github.com/devonium/gm-discordAPI/blob/doc/whmessagec.md#whmessagec)** | msg  |  |
+| `function` | callback  |  |
+
+---
+# `void` `deleteResponse(callback)`
+# Arguments
+| type  | name | description |
+| ----  | ---- | ----------- |
+| `function` | callback  |  |
+
+---

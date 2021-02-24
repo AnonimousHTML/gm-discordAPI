@@ -29,6 +29,7 @@ structures
 constructors
 ---
 * [messagec](https://github.com/devonium/gm-discordAPI/blob/doc/messagec.md#messagec)
+* [whmessagec](https://github.com/devonium/gm-discordAPI/blob/doc/whmessagec.md#whmessagec)
 * [embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md)
 * [command](https://github.com/devonium/gm-discordAPI/blob/doc/command.md)
 * [permissions](https://github.com/devonium/gm-discordAPI/blob/doc/permissions.md)

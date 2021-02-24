@@ -252,7 +252,7 @@ function discord.client()
 
                 client.emitEvent("typingStart", payload.d)
             elseif payload.t == "GUILD_ROLE_UPDATE" then
-                local role = payload.d.role
+                local role = discord.structures.role(client,payload.d.role)
                 local guild = client.guilds[payload.d.guild_id]
                 guild.guild_hashes = payload.d.guild_hashes
                 guild.roles[role.id] = role

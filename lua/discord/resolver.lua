@@ -79,6 +79,7 @@ function discord.resolver.colorToInt(color)
 end
 
 function discord.resolver.intToColor(color)
+	color = color or color_white
     color = color == 0 and 0xFFFFFF or color or 0xFFFFFF
     return Color(math.floor(color / 65536), math.floor(color / 256) % 256, color % 256)
 end

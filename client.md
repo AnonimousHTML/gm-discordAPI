@@ -320,7 +320,7 @@ Changes the bot's nickname for this guild
 | ----  | ---- | ----------- |
 | `string` | webhook_id  |  |
 | `string` | webhook_token  |  |
-| `whmessage` | message  |  |
+| `string` **[embed](https://github.com/devonium/gm-discordAPI/blob/doc/embed.md#embed)** `whmessage` | message  |  |
 | `function` | callback  |  |
 
 ---

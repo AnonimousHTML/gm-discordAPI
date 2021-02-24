@@ -14,7 +14,7 @@
 # Arguments
 | type  | name | description |
 | ----  | ---- | ----------- |
-| `integer` | type  |  |
+| **[optiontype](https://github.com/devonium/gm-discordAPI/blob/614960c5d8e2fb92d0b1dcccbbdf4cda10482bcb/lua/discord/enums.lua#L56)** | type  |  |
 
 ---
 # `void` `setDescription(description)`

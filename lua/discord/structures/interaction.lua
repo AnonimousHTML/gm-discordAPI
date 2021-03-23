@@ -50,7 +50,7 @@ function discord.structures.userInteraction(client, interaction)
     function interaction.response(type, msg, callback)
         client.HTTPRequest("interactions/" .. interaction.id .. "/" .. interaction.token .. "/callback", "POST", {
             type = type,
-            data = discord.resolver.whmessage(msg)
+            data = msg and discord.resolver.whmessage(msg)
         }, callback and function(code, data, headers)
             callback(code ~= 204, data, headers)
         end)

@@ -1,5 +1,4 @@
 function discord.structures.message(client, message)
-    if message.guild_id and message.member == nil then return end
     if message.author == nil then return end
     message.dm = message.guild_id == nil
 
@@ -21,8 +20,7 @@ function discord.structures.message(client, message)
         message.channel = guild.channels[message.channel_id]
 
         message.member = guild.members[message.author.id]
-        if message.member == nil then return end
-        message.author = message.member.user
+        if message.member then message.author = message.member.user end
     end
 
     if message.referenced_message then

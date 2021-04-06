@@ -135,74 +135,59 @@ discordClient.on("ready","commandCreationExample",function()
     exampleCommand.setName("example")
     exampleCommand.addSubGroup(
         discord.subgroup()
-        .setName("ulx")
-
+        .setName("subgroupExample")
         .addCommand(
             discord.command()
-            .setName("kick")
+            .setName("cmdWithChoices")
             .addOption(
                 discord.option()
-                .setName("ply")
-                .setDescription("player's name")
+                .setName("val")
+                .setDescription("description")
                 .setType(discord.enums.command_option_type.STRING)
                 .setRequired(true)
-            )
-            .addOption(
-                discord.option()
-                .setName("reason")
-                .setType(discord.enums.command_option_type.STRING)
-                .setRequired(true)
-            )
-        )
-        .addCommand(
-            discord.command()
-            .setName("ban")
-
-            .addOption(
-                discord.option()
-                .setName("ply")
-                .setDescription("player's name")
-                .setType(discord.enums.command_option_type.STRING)
-                .setRequired(true)
-            )
-            .addOption(
-                discord.option()
-                .setName("reason")
-                .setType(discord.enums.command_option_type.STRING)
-                .setRequired(true)
-            )
-            .addOption(
-                discord.option()
-                .setName("len")
-                .setType(discord.enums.command_option_type.STRING)
-                .setRequired(true)
-
-                .addChoice("1Minute", "60")
-                .addChoice("5Minute", "300")
-                .addChoice("10Minute", "600")
-                .addChoice("15Minute", "900")
+                .addChoice("1", "1")
+                .addChoice("2", "2")
+                .addChoice("3", "3")
+                .addChoice("4", "4")
             )
         )
     )
-
     exampleCommand.addSubCommand(
         discord.command()
-        .setName("lua")
+        .setName("cmd")
         .addOption(
             discord.option()
-            .setName("code")
+            .setName("val")
+            .setDescription("description")
             .setType(discord.enums.command_option_type.STRING)
             .setRequired(true)
         )
     )
-
+    exampleCommand.addSubCommand(
+        discord.command()
+        .setName("response1")
+    )
+    exampleCommand.addSubCommand(
+        discord.command()
+        .setName("response2")
+    )
     discordClient.createGuildCommand(exampleCommand, guildID)
 
     discordClient.on("interactionCreate", "responseExample", function(interaction)
         local data = interaction.data
+        --PrintTable(data)
         if data.name == "example"
         then
-            interaction.response(discord.enums.response_type.AcknowledgeWithSource)
+            if data.options[1].name == "response1"
+            then
+                interaction.response(discord.enums.response_type.DeferredChannelMessageWithSource)
+                timer.Simple(2,function()
+                    interaction.editResponse("Response")
+                end)
+            elseif data.options[1].name == "response2"
+            then
+                interaction.response(discord.enums.response_type.ChannelMessageWithSource , "Response")
+            end
         end
     end)
 end)

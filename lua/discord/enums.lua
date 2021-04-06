@@ -1,6 +1,5 @@
 discord.enums = {
-    permissions =
-    {
+    permissions = {
         CREATE_INSTANT_INVITE = 0x00000001,
         KICK_MEMBERS = 0x00000002,
         BAN_MEMBERS = 0x00000004,
@@ -33,9 +32,7 @@ discord.enums = {
         MANAGE_WEBHOOKS = 0x20000000,
         MANAGE_EMOJIS = 0x40000000
     },
-
-    message_type =
-    {
+    message_type = {
         DEFAULT = 0,
         RECIPIENT_ADD = 1,
         RECIPIENT_REMOVE = 2,
@@ -52,25 +49,21 @@ discord.enums = {
         GUILD_DISCOVERY_DISQUALIFIED = 14,
         GUILD_DISCOVERY_REQUALIFIED = 15
     },
-
-    command_option_type =
-    {
-        SUB_COMMAND	= 1,
+    command_option_type = {
+        SUB_COMMAND = 1,
         SUB_COMMAND_GROUP = 2,
-        STRING	= 3,
-        INTEGER	= 4,
-        BOOLEAN	= 5,
-        USER	= 6,
-        CHANNEL	= 7,
-        ROLE	= 8
+        STRING = 3,
+        INTEGER = 4,
+        BOOLEAN = 5,
+        USER = 6,
+        CHANNEL = 7,
+        ROLE = 8
     },
-
-    response_type =
-    {
-        Pong = 1,                        -- ACK a Ping
-        Acknowledge = 2,                 -- ACK a command without sending a message, eating the user's input
-        ChannelMessage = 3,              -- respond with a message, eating the user's input
-        ChannelMessageWithSource = 4,    -- respond with a message, showing the user's input
-        AcknowledgeWithSource = 5,	    -- ACK a command without sending a message, showing the user's input
+    response_type = {
+        Pong = 1, --ACK a Ping
+        Acknowledge = 2,    --DEPRECATED ACK a command without sending a message, eating the user's input
+        ChannelMessage = 3, --DEPRECATED respond with a message, eating the user's input
+        ChannelMessageWithSource = 4, --respond to an interaction with a message
+        DeferredChannelMessageWithSource = 5, --ACK an interaction and edit to a response later, the user sees a loading state
     },
 }

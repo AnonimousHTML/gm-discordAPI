@@ -1,5 +1,5 @@
 # gm-discordAPI
-### **this library is not a complete implementation of the discord API (but it may be in the future)**
+### **this library is not a complete implementation of the discord API**
 
 [Documentation](https://github.com/devonium/gm-discordAPI/blob/doc/README.md)
 

@@ -366,12 +366,11 @@ function discord.client()
     end
 
     function client.ws:onDisconnected()
-        client.disconect()
         client.emitEvent("close")
 
         if client.autoreconnect
         then
-            client.reconnect()
+            client.login(client.token)
         end
     end
 
@@ -407,7 +406,6 @@ function discord.client()
 
     function client.reconnect()
         client.disconect()
-        client.login(client.token)
     end
 
     function client.enableAutoReconnect()
